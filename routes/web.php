@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function() {
-    //Route::get('/','UserController@get_User_List_Admin');
+    Route::get('/','UserController@getTest');
 
 	Route::group(['prefix' => 'user-group'], function() {
         Route::get('/','UserGroupController@get_List_Admin');

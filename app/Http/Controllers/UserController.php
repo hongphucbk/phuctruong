@@ -11,4 +11,10 @@ class UserController extends Controller
 	{
 		return view('admin.user.list');
 	}
+
+	public function getTest()
+	{
+		return view('admin.user.list');
+	}
+	
 }
