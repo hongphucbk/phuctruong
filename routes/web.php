@@ -15,8 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/a', function(){
+    	return view('admin.user.list');
+});
+
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/','UserController@getTest');
+    Route::get('/', function(){
+    	return view('admin.user.list');
+    });
 
 	Route::group(['prefix' => 'user-group'], function() {
         Route::get('/','UserGroupController@get_List_Admin');
