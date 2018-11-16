@@ -15,8 +15,8 @@
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                     <li class="breadcrumb-item active">User</li>
                 </ol>
-                <a href="admin/user/add">
-                <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button></a>
+                <a href="admin/user-group/add">
+                <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Edit</button></a>
             </div>
         </div>
     </div>
@@ -25,13 +25,13 @@
     <!-- ============================================================== -->
     
     <!-- ============================================================== -->
-    <!-- Start Page Content -->
-    <!-- ============================================================== -->
+	<!-- Start Page Content -->
+	<!-- ============================================================== -->
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header bg-info">
-                    <h4 class="m-b-0 text-white">USER</h4>
+                    <h4 class="m-b-0 text-white">USER GROUP</h4>
                 </div>
                 <div class="card-body">
                     @if(count($errors)>0)
@@ -47,41 +47,24 @@
                             {{session('notification')}}                         
                         </div>
                     @endif
-                    <form action="admin/user/add" method="post">
+                    <form action="admin/user-group/edit/{{$user_group->id}}" method="post">
                         {{ csrf_field() }}
                         <div class="form-body">
-                            <h3 class="card-title">Add new user</h3>
+                            <h3 class="card-title">Edit <span style="color: blue">{{$user_group->name}}</span> </h3>
                             <hr>
                             <div class="row p-t-20">
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label class="control-label">Full name</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Fullname ...">
-                                        <small class="form-control-feedback"> Your full name </small> </div>
+                                        <label class="control-label">Name Group</label>
+                                        <input type="text" class="form-control" name="name" value="{{$user_group->name}}" >
+                                        <small class="form-control-feedback"> This is group name </small> </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-4">
+                                <div class="col-md-7">
                                     <div class="form-group">
-                                        <label class="control-label">Email</label>
-                                        <input type="text"   class="form-control form-control-danger" name="email" placeholder="Email ...">
-                                        <small class="form-control-feedback"> Email </small> </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Phone</label>
-                                        <input type="text" class="form-control form-control-danger" name="phone" placeholder="Your phone ...">
-                                        <small class="form-control-feedback"> Your phone </small> </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Group</label>
-                                        <select class="form-control form-control-danger" name="users_group_id">
-                                            <option  value="NULL">... Chose 1 group ...</option>
-                                            @foreach($user_group as $key => $val)
-                                            <option value="{{$val->id}}">{{$val->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                        <label class="control-label">Note</label>
+                                        <input type="text" id="lastName" class="form-control form-control-danger" name="note" value="{{$user_group->note}}">
+                                        <small class="form-control-feedback"> You can input your note </small> </div>
                                 </div>
                                 <!--/span-->
                             </div>
@@ -89,17 +72,16 @@
                             
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Add</button>
-                             
+                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Edit</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End PAge Content -->
-    <!-- ============================================================== -->
+	<!-- ============================================================== -->
+	<!-- End PAge Content -->
+	<!-- ============================================================== -->
     
     
     

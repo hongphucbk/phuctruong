@@ -15,7 +15,9 @@
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                     <li class="breadcrumb-item active">User</li>
                 </ol>
-                <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>
+                <a href="admin/user/add">
+                    <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>
+                </a>
             </div>
         </div>
     </div>
@@ -105,10 +107,10 @@
                         <div class="d-flex no-block align-items-center">
                             <div>
                                 <h3><i class="icon-bag"></i></h3>
-                                <p class="text-muted">All PROJECTS</p>
+                                <p class="text-muted">All User</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-success">431</h2>
+                                <h2 class="counter text-success">{{get_Admin_All_User()}}</h2>
                             </div>
                         </div>
                     </div>
@@ -131,105 +133,45 @@
 	    <div class="col-12">
 	        <div class="card">
 	            <div class="card-body">
-	                <h4 class="card-title">Data Table</h4>
+	                <h4 class="card-title">USER</h4>
 	                <h6 class="card-subtitle">Data table example</h6>
 	                <div class="table-responsive m-t-40">
 	                    <table id="myTable" class="table table-bordered table-striped">
 	                        <thead>
 	                            <tr>
+	                                <th>#</th>
 	                                <th>Name</th>
-	                                <th>Position</th>
-	                                <th>Office</th>
-	                                <th>Age</th>
-	                                <th>Start date</th>
-	                                <th>Salary</th>
+	                                <th>Email</th>
+	                                <th>Phone</th>
+	                                <th>Group</th>
+
+                                    <th>Edit</th>
+                                    <th>Delete</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>
+                                @foreach($users as $key => $val)
 	                            <tr>
-	                                <td>Tiger Nixon</td>
-	                                <td>System Architect</td>
-	                                <td>Edinburgh</td>
-	                                <td>61</td>
-	                                <td>2011/04/25</td>
-	                                <td>$320,800</td>
+	                                <td>{{$val->id}}</td>
+	                                <td>{{$val->name}}</td>
+	                                <td>{{$val->email}}</td>
+	                                <td>{{$val->phone}}</td>
+                                    <td>{{$val->user_group->name}}</td>
+	                                
+                                    <td>
+                                        <a href="admin/user/edit/{{$val->id}}" class="btn btn-info">
+                                            <span class="glyphicon glyphicon-edit"></span>
+                                            <span>Edit</span>            
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="admin/user/delete/{{$val->id}}" class="btn btn-danger">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                            <span>Delete</span>            
+                                        </a>
+                                    </td>
 	                            </tr>
-	                            <tr>
-	                                <td>Garrett Winters</td>
-	                                <td>Accountant</td>
-	                                <td>Tokyo</td>
-	                                <td>63</td>
-	                                <td>2011/07/25</td>
-	                                <td>$170,750</td>
-	                            </tr>
-	                            <tr>
-	                                <td>Ashton Cox</td>
-	                                <td>Junior Technical Author</td>
-	                                <td>San Francisco</td>
-	                                <td>66</td>
-	                                <td>2009/01/12</td>
-	                                <td>$86,000</td>
-	                            </tr>
-	                            
-	                            <tr>
-	                                <td>Fiona Green</td>
-	                                <td>Chief Operating Officer (COO)</td>
-	                                <td>San Francisco</td>
-	                                <td>48</td>
-	                                <td>2010/03/11</td>
-	                                <td>$850,000</td>
-	                            </tr>
-	                            
-	                            <tr>
-	                                <td>Bruno Nash</td>
-	                                <td>Software Engineer</td>
-	                                <td>London</td>
-	                                <td>38</td>
-	                                <td>2011/05/03</td>
-	                                <td>$163,500</td>
-	                            </tr>
-	                            <tr>
-	                                <td>Sakura Yamamoto</td>
-	                                <td>Support Engineer</td>
-	                                <td>Tokyo</td>
-	                                <td>37</td>
-	                                <td>2009/08/19</td>
-	                                <td>$139,575</td>
-	                            </tr>
-	                            
-	                            
-	                            <tr>
-	                                <td>Jonas Alexander</td>
-	                                <td>Developer</td>
-	                                <td>San Francisco</td>
-	                                <td>30</td>
-	                                <td>2010/07/14</td>
-	                                <td>$86,500</td>
-	                            </tr>
-	                            <tr>
-	                                <td>Shad Decker</td>
-	                                <td>Regional Director</td>
-	                                <td>Edinburgh</td>
-	                                <td>51</td>
-	                                <td>2008/11/13</td>
-	                                <td>$183,000</td>
-	                            </tr>
-	                            <tr>
-	                                <td>Michael Bruce</td>
-	                                <td>Javascript Developer</td>
-	                                <td>Singapore</td>
-	                                <td>29</td>
-	                                <td>2011/06/27</td>
-	                                <td>$183,000</td>
-	                            </tr>
-	                            <tr>
-	                                <td>Donna Snider</td>
-	                                <td>Customer Support</td>
-	                                <td>New York</td>
-	                                <td>27</td>
-	                                <td>2011/01/25</td>
-	                                <td>$112,000</td>
-	                            </tr>
+	                            @endforeach
 	                        </tbody>
 	                    </table>
 	                </div>

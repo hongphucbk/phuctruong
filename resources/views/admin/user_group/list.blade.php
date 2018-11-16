@@ -106,10 +106,10 @@
                         <div class="d-flex no-block align-items-center">
                             <div>
                                 <h3><i class="icon-bag"></i></h3>
-                                <p class="text-muted">All PROJECTS</p>
+                                <p class="text-muted">All Group User</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-success">431</h2>
+                                <h2 class="counter text-success">{{get_Admin_All_UserGroup()}}</h2>
                             </div>
                         </div>
                     </div>
@@ -135,6 +135,19 @@
 	                <h4 class="card-title">Data Table</h4>
 	                <h6 class="card-subtitle">Data table example</h6>
 	                <div class="table-responsive m-t-40">
+                        @if(count($errors)>0)
+                            <div class="alert alert-danger">
+                                @foreach($errors->all() as $err)
+                                    {{$err}}<br>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        @if(session('notification'))
+                            <div class="alert alert-success">
+                                {{session('notification')}}                         
+                            </div>
+                        @endif
 	                    <table id="myTable" class="table table-bordered table-striped">
 	                        <thead>
 	                            <tr>
@@ -153,8 +166,18 @@
 	                                <td>{{ $val->name }}</td>
 	                                <td>{{ $val->note }}</td>
 
-	                                <td>2011/04/25</td>
-	                                <td>$320,800</td>
+	                                <td>
+                                        <a href="admin/user-group/edit/{{$val->id}}" class="btn btn-info">
+                                            <span class="glyphicon glyphicon-edit"></span>
+                                            <span>Edit</span>            
+                                        </a>
+                                    </td>
+	                                <td>
+                                        <a href="admin/user-group/delete/{{$val->id}}" class="btn btn-danger">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                            <span>Delete</span>            
+                                        </a>
+                                    </td>
 	                            </tr>
 	                            @endforeach
 	                        </tbody>
@@ -168,10 +191,6 @@
 	<!-- ============================================================== -->
 	<!-- End PAge Content -->
 	<!-- ============================================================== -->
-    
-    
-    
-    
 </div>
 
 @endsection

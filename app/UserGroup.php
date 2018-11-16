@@ -10,6 +10,11 @@ class UserGroup extends Model
 
     public function users()
     {
-    	return $this->hasMany('App\Users','group_user_id','id');
+    	return $this->hasMany('App\Users','users_group_id','id');
+    }
+
+    public function user_role()
+    {
+    	return $this->belongsTo('App\UserRole','users_group_id','id');
     }
 }
