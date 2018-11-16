@@ -26,6 +26,17 @@ function get_Admin_All_User()
 function get_Admin_All_UserGroup()
 {
 	return count( App\UserGroup::all() );
+
+}
+
+function get_Admin_All_Role()
+{
+	return count( App\Role::all() );
+}
+
+function get_Admin_All_UserRole()
+{
+	return count( App\UserRole::all() );
 }
 
 ?>

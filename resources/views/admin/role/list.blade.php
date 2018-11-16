@@ -110,7 +110,7 @@
                                 <p class="text-muted">All Roles</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-success">{{get_Admin_All_User()}}</h2>
+                                <h2 class="counter text-success">{{get_Admin_All_Role()}}</h2>
                             </div>
                         </div>
                     </div>

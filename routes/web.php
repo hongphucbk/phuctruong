@@ -36,7 +36,6 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('edit/{id}','UserGroupController@post_Edit_Admin');
 
         Route::get('delete/{id}','UserGroupController@get_Delete_Admin');
-
     });
 
     Route::group(['prefix' => 'user'], function() {
@@ -61,6 +60,18 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('edit/{id}','RoleController@post_Edit_Admin');
 
         Route::get('delete/{id}','RoleController@get_Delete_Admin');
+    });
+
+    Route::group(['prefix' => 'user-role'], function() {
+        Route::get('/','UserRoleController@get_List_Admin');
+
+        Route::get('add','UserRoleController@get_Add_Admin');
+        Route::post('add','UserRoleController@post_Add_Admin');
+
+        Route::get('edit/{id}','UserRoleController@get_Edit_Admin');
+        Route::post('edit/{id}','UserRoleController@post_Edit_Admin');
+
+        Route::get('delete/{id}','UserRoleController@get_Delete_Admin');
     });
 
 });

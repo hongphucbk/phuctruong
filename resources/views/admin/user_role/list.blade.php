@@ -7,15 +7,15 @@
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
-            <h4 class="text-themecolor">User</h4>
+            <h4 class="text-themecolor">User Role</h4>
         </div>
         <div class="col-md-7 align-self-center text-right">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">User</li>
+                    <li class="breadcrumb-item active">User Role</li>
                 </ol>
-                <a href="admin/user/add">
+                <a href="admin/user-role/add">
                     <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>
                 </a>
             </div>
@@ -110,7 +110,7 @@
                                 <p class="text-muted">All User</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-success">{{get_Admin_All_User()}}</h2>
+                                <h2 class="counter text-success">{{get_Admin_All_UserRole()}}</h2>
                             </div>
                         </div>
                     </div>
@@ -133,39 +133,50 @@
 	    <div class="col-12">
 	        <div class="card">
 	            <div class="card-body">
-	                <h4 class="card-title">USER</h4>
-	                <h6 class="card-subtitle">Data table example</h6>
+	                <h4 class="card-title">USER ROLE</h4>
 	                <div class="table-responsive m-t-40">
+                        @if(count($errors)>0)
+                            <div class="alert alert-danger">
+                                @foreach($errors->all() as $err)
+                                    {{$err}}<br>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        @if(session('notification'))
+                            <div class="alert alert-success">
+                                {{session('notification')}}                         
+                            </div>
+                        @endif
 	                    <table id="myTable" class="table table-bordered table-striped">
 	                        <thead>
 	                            <tr>
 	                                <th>#</th>
-	                                <th>Name</th>
-	                                <th>Email</th>
-	                                <th>Phone</th>
 	                                <th>Group</th>
+	                                <th>Role</th>
+	                                <th>Note</th>
 
                                     <th>Edit</th>
                                     <th>Delete</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>
-                                @foreach($users as $key => $val)
+                                @foreach($user_role as $key => $val)
 	                            <tr>
 	                                <td>{{$val->id}}</td>
-	                                <td>{{$val->name}}</td>
-	                                <td>{{$val->email}}</td>
-	                                <td>{{$val->phone}}</td>
-                                    <td>{{$val->user_group->name}}</td>
+	                                <td>{{$val->user_group->name}}</td>
+	                                <td>{{$val->role->name}}</td>
+	                                <td>{{$val->note}}</td>
+                                    
 	                                
                                     <td>
-                                        <a href="admin/user/edit/{{$val->id}}" class="btn btn-info">
+                                        <a href="admin/user-role/edit/{{$val->id}}" class="btn btn-info">
                                             <span class="glyphicon glyphicon-edit"></span>
                                             <span>Edit</span>            
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="admin/user/delete/{{$val->id}}" class="btn btn-danger">
+                                        <a href="admin/user-role/delete/{{$val->id}}" class="btn btn-danger">
                                             <span class="glyphicon glyphicon-remove"></span>
                                             <span>Delete</span>            
                                         </a>

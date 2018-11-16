@@ -10,11 +10,11 @@ class UserRole extends Model
 
     public function role()
     {
-    	return $this->hasMany('App\Role','role_id','id');
+    	return $this->belongsTo('App\Role','role_id','id');
     }
 
     public function user_group()
     {
-    	return $this->hasMany('App\UserGroup','group_user_id','id');
+    	return $this->belongsTo('App\UserGroup','users_group_id','id');
     }
 }

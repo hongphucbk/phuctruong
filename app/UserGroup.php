@@ -15,6 +15,6 @@ class UserGroup extends Model
 
     public function user_role()
     {
-    	return $this->belongsTo('App\UserRole','users_group_id','id');
+    	return $this->hasMany('App\UserRole','users_group_id','id');
     }
 }
