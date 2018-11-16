@@ -8,9 +8,9 @@ class UserRole extends Model
 {
     protected $table = "user_role";
 
-    public function roles()
+    public function role()
     {
-    	return $this->hasMany('App\Roles','role_id','id');
+    	return $this->hasMany('App\Role','role_id','id');
     }
 
     public function user_group()

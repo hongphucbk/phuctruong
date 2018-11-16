@@ -7,13 +7,13 @@
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
-            <h4 class="text-themecolor">User</h4>
+            <h4 class="text-themecolor">Role</h4>
         </div>
         <div class="col-md-7 align-self-center text-right">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">User</li>
+                    <li class="breadcrumb-item active">Role</li>
                 </ol>
                 <a href="admin/user/add">
                 <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button></a>
@@ -31,7 +31,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header bg-info">
-                    <h4 class="m-b-0 text-white">USER</h4>
+                    <h4 class="m-b-0 text-white">ROLE</h4>
                 </div>
                 <div class="card-body">
                     @if(count($errors)>0)
@@ -47,45 +47,24 @@
                             {{session('notification')}}                         
                         </div>
                     @endif
-                    <form action="admin/user/edit/{{$user->id}}" method="post">
+                    <form action="admin/role/add" method="post">
                         {{ csrf_field() }}
                         <div class="form-body">
-                            <h3 class="card-title">Edit user <span style="color: blue">{{$user->name}}</span></h3>
+                            <h3 class="card-title">Add new role</h3>
                             <hr>
                             <div class="row p-t-20">
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label class="control-label">Full name</label>
-                                        <input type="text" class="form-control" name="name" value="{{$user->name}}">
-                                        <small class="form-control-feedback"> Your full name </small> </div>
+                                        <label class="control-label">Role name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Role name ...">
+                                        <small class="form-control-feedback"> Role name </small> </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="control-label">Email</label>
-                                        <input type="text"   class="form-control form-control-danger" name="email" value="{{$user->email}}">
-                                        <small class="form-control-feedback"> Email </small> </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Phone</label>
-                                        <input type="text" class="form-control form-control-danger" name="phone" value="{{$user->phone}}">
-                                        <small class="form-control-feedback"> Your phone </small> </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Group</label>
-                                        <select class="form-control form-control-danger" name="users_group_id">
-                                            
-                                            @foreach($user_group as $key => $val)
-                                            <option 
-                                            @if($val->id == $user->users_group_id)
-                                                selected=""
-                                            @endif
-                                            value="{{$val->id}}">{{$val->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                        <label class="control-label">Note</label>
+                                        <input type="text"   class="form-control form-control-danger" name="note" placeholder="Note ...">
+                                        <small class="form-control-feedback"> Note </small> </div>
                                 </div>
                                 <!--/span-->
                             </div>
@@ -93,7 +72,7 @@
                             
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Edit</button>
+                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Add</button>
                              
                         </div>
                     </form>
@@ -104,6 +83,9 @@
     <!-- ============================================================== -->
     <!-- End PAge Content -->
     <!-- ============================================================== -->
+    
+    
+    
     
 </div>
 

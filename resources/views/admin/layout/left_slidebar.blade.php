@@ -4,7 +4,8 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="source/images/users/1.jpg" alt="user-img" class="img-circle"><span class="hide-menu">Mark Jeckson</span></a>
+                @if(Auth::check())
+                <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="source/images/users/1.jpg" alt="user-img" class="img-circle"><span class="" style="color: green">{{ Auth::user()->name }}</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
                         <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
@@ -13,6 +14,7 @@
                         <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
+                @endif
                 <li class="nav-small-cap">--- PERSONAL</li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
                     <ul aria-expanded="false" class="collapse">
@@ -27,6 +29,8 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="admin/user-group">User Group</a></li>
                         <li><a href="admin/user">User</a></li>
+                        <li><a href="admin/user-role">User Role</a></li>
+                        <li><a href="admin/role">Role</a></li>
                         
                     </ul>
                 </li>

@@ -106,7 +106,7 @@
                         <div class="d-flex no-block align-items-center">
                             <div>
                                 <h3><i class="icon-bag"></i></h3>
-                                <p class="text-muted">All Group User</p>
+                                <p class="text-muted">All User Group</p>
                             </div>
                             <div class="ml-auto">
                                 <h2 class="counter text-success">{{get_Admin_All_UserGroup()}}</h2>

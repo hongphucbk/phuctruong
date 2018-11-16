@@ -56,13 +56,13 @@ class UserController extends Controller
             'name.required'=>'Bạn chưa nhập tên group',
         ]);
 
-		$user_group = new User;
-		$user_group->name = $request->name;
-		$user_group->email = $request->email;
-		$user_group->phone = $request->phone;
-		$user_group->users_group_id = $request->users_group_id;
-		$user_group->password = bcrypt(123456); //rand_string(6);
-		$user_group->save();
+		$user = new User;
+		$user->name = $request->name;
+		$user->email = $request->email;
+		$user->phone = $request->phone;
+		$user->users_group_id = $request->users_group_id;
+		$user->password = bcrypt(123456); //rand_string(6);
+		$user->save();
 		return redirect()->back()->with('notification','Add successfully');
 	}
 
@@ -82,10 +82,13 @@ class UserController extends Controller
             'name.required'=>'Bạn chưa nhập tên group',
         ]);
 
-		$user = UserGroup::find($id);
+		$user = User::find($id);
 		$user->name = $request->name;
-		$user_group->note = $request->note;
-		$user_group->save();
+		$user->email = $request->email;
+		$user->phone = $request->phone;
+		$user->users_group_id = $request->users_group_id;
+		//$user->password = bcrypt(123456); //rand_string(6);
+		$user->save();
 		return redirect()->back()->with('notification','Edit successfully');
 	}
 	
@@ -96,9 +99,9 @@ class UserController extends Controller
 
 		//Step 2: Delete all Role in UserRole belongTo this group
 
-		//Step 3: Delete this group
-		$user_group = UserGroup::find($id);
-		$user_group->delete();
+		//Step 3: Delete
+		$user = User::find($id);
+		$user->delete();
 		return redirect()->back()->with('notification','Deleted successfully');
 	}
 	

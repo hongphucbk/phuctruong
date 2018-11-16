@@ -93,7 +93,7 @@
                             
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Edit</button>
+                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Add</button>
                              
                         </div>
                     </form>

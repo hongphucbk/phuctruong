@@ -51,4 +51,16 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('delete/{id}','UserController@get_Delete_Admin');
     });
 
+    Route::group(['prefix' => 'role'], function() {
+        Route::get('/','RoleController@get_List_Admin');
+
+        Route::get('add','RoleController@get_Add_Admin');
+        Route::post('add','RoleController@post_Add_Admin');
+
+        Route::get('edit/{id}','RoleController@get_Edit_Admin');
+        Route::post('edit/{id}','RoleController@post_Edit_Admin');
+
+        Route::get('delete/{id}','RoleController@get_Delete_Admin');
+    });
+
 });

@@ -136,19 +136,6 @@
 	                <h4 class="card-title">USER</h4>
 	                <h6 class="card-subtitle">Data table example</h6>
 	                <div class="table-responsive m-t-40">
-                        @if(count($errors)>0)
-                            <div class="alert alert-danger">
-                                @foreach($errors->all() as $err)
-                                    {{$err}}<br>
-                                @endforeach
-                            </div>
-                        @endif
-
-                        @if(session('notification'))
-                            <div class="alert alert-success">
-                                {{session('notification')}}                         
-                            </div>
-                        @endif
 	                    <table id="myTable" class="table table-bordered table-striped">
 	                        <thead>
 	                            <tr>
