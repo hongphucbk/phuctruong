@@ -39,4 +39,9 @@ function get_Admin_All_UserRole()
 	return count( App\UserRole::all() );
 }
 
+function get_Admin_Helpdesk_All_Category()
+{
+	return count( App\HelpdeskCategory::all() );
+}
+
 ?>

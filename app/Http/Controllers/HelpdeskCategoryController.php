@@ -5,21 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\HelpdeskActivity;
-use App\Role;
+use App\HelpdeskCategory;
 
-class HelpdeskController extends Controller
+class HelpdeskCategoryController extends Controller
 {
 
 	public function get_List_Admin()
 	{
-		$tickets = HelpdeskActivity::all();
+		$categories = HelpdeskCategory::all();
 		//$user_group = UserGroup::all();
-		return view('admin.apps.helpdesk.list', compact('tickets'));
+		return view('admin.apps.category.list', compact('categories'));
 	}
 
 	public function get_Add_Admin()
 	{
-		return view('admin.role.add');
+		return view('admin.apps.category.add');
 	}
 
 	public function post_Add_Admin(Request $request)
@@ -31,18 +31,18 @@ class HelpdeskController extends Controller
             'name.required'=>'Please input role name',
         ]);
 
-		$role = new Role;
-		$role->name = $request->name;
-		$role->note = $request->note;
+		$category = new HelpdeskCategory;
+		$category->name = $request->name;
+		$category->note = $request->note;
 
-		$role->save();
+		$category->save();
 		return redirect()->back()->with('notification','Add successfully');
 	}
 
 	public function get_Edit_Admin($id)
 	{
-		$role = Role::find($id);
-		return view('admin.role.edit',compact('role'));
+		$category = HelpdeskCategory::find($id);
+		return view('admin.apps.category.edit',compact('category'));
 	}
 
 	public function post_Edit_Admin($id, Request $request)
@@ -51,13 +51,13 @@ class HelpdeskController extends Controller
             'name' => 'required',
         ],
         [
-            'name.required'=>'Please input your role',
+            'name.required'=>'Please input your category',
         ]);
 
-		$role = Role::find($id);
-		$role->name = $request->name;
-		$role->note = $request->note;
-		$role->save();
+		$category = HelpdeskCategory::find($id);
+		$category->name = $request->name;
+		$category->note = $request->note;
+		$category->save();
 		return redirect()->back()->with('notification','Edit successfully');
 	}
 	
@@ -69,8 +69,8 @@ class HelpdeskController extends Controller
 		//Step 2: Delete all Role in UserRole belongTo this group
 
 		//Step 3: Delete
-		$role = Role::find($id);
-		$role->delete();
+		$category = HelpdeskCategory::find($id);
+		$category->delete();
 		return redirect()->back()->with('notification','Deleted successfully');
 	}
 }

@@ -75,6 +75,18 @@ Route::group(['prefix' => 'admin'], function() {
         Route::group(['prefix' => 'helpdesk'], function() {
             Route::get('/','HelpdeskController@get_List_Admin');
         });
+
+        Route::group(['prefix' => 'category'], function() {
+            Route::get('/','HelpdeskCategoryController@get_List_Admin');
+
+            Route::get('add','HelpdeskCategoryController@get_Add_Admin');
+            Route::post('add','HelpdeskCategoryController@post_Add_Admin');
+
+            Route::get('edit/{id}','HelpdeskCategoryController@get_Edit_Admin');
+            Route::post('edit/{id}','HelpdeskCategoryController@post_Edit_Admin');
+
+            Route::get('delete/{id}','HelpdeskCategoryController@get_Delete_Admin');
+        });
     });
 
 });

@@ -34,6 +34,14 @@
                         
                     </ul>
                 </li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Helpdesk</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="admin/app/helpdesk">Support Ticket</a></li>
+                        <li><a href="admin/app/category">Category</a></li>
+                        <li><a href="app-contact2.html">Contact Grid</a></li>
+                        <li><a href="app-contact-detail.html">Contact Detail</a></li>
+                    </ul>
+                </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="app-calendar.html">Calendar</a></li>
