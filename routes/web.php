@@ -90,3 +90,6 @@ Route::group(['prefix' => 'admin'], function() {
     });
 
 });
+
+//Send mail
+Route::get('send_email','EmailController@sendEmailReminder');
