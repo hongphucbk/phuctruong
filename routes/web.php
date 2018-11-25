@@ -93,3 +93,10 @@ Route::group(['prefix' => 'admin'], function() {
 
 //Send mail
 Route::get('send_email','EmailController@sendEmailReminder');
+
+//Index Page
+Route::get('/','PhucTruongController@get_index' );
+
+Route::group(['prefix' => 'pages'], function() {
+    
+});
