@@ -22,9 +22,6 @@ Route::post('admin/login','UserController@post_Login_Admin');
 
 //Admin pages
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', function(){
-    	return view('admin.user.list');
-    });
 
 	Route::group(['prefix' => 'user-group'], function() {
         Route::get('/','UserGroupController@get_List_Admin');
@@ -74,4 +71,32 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('delete/{id}','UserRoleController@get_Delete_Admin');
     });
 
+    Route::group(['prefix' => 'app'], function() {
+        Route::group(['prefix' => 'helpdesk'], function() {
+            Route::get('/','HelpdeskController@get_List_Admin');
+        });
+
+        Route::group(['prefix' => 'category'], function() {
+            Route::get('/','HelpdeskCategoryController@get_List_Admin');
+
+            Route::get('add','HelpdeskCategoryController@get_Add_Admin');
+            Route::post('add','HelpdeskCategoryController@post_Add_Admin');
+
+            Route::get('edit/{id}','HelpdeskCategoryController@get_Edit_Admin');
+            Route::post('edit/{id}','HelpdeskCategoryController@post_Edit_Admin');
+
+            Route::get('delete/{id}','HelpdeskCategoryController@get_Delete_Admin');
+        });
+    });
+
+});
+
+//Send mail
+Route::get('send_email','EmailController@sendEmailReminder');
+
+//Index Page
+Route::get('/','PhucTruongController@get_index' );
+
+Route::group(['prefix' => 'pages'], function() {
+    
 });
