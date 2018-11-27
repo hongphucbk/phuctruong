@@ -25,6 +25,10 @@ class UsersExport implements FromQuery, WithHeadings
             '#',
             'Name',
             'Email',
+            'Phone',
+            'Group',
+            'Created_at',
+            'Updated_at',
         ];
     }
 
