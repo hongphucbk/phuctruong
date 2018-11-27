@@ -15,6 +15,9 @@
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                     <li class="breadcrumb-item active">User</li>
                 </ol>
+                <a href="admin/user/export">
+                    <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa fa-file-excel-o"></i> Export Excel</button>
+                </a>
                 <a href="admin/user/add">
                     <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>
                 </a>

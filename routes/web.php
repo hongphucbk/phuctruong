@@ -19,9 +19,11 @@ Route::get('/', function () {
 //Login admin
 Route::get('admin/login','UserController@get_Login_Admin');
 Route::post('admin/login','UserController@post_Login_Admin');
+Route::get('admin/logout','UserController@get_Logout_Admin');
+
 
 //Admin pages
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
 
 	Route::group(['prefix' => 'user-group'], function() {
         Route::get('/','UserGroupController@get_List_Admin');
@@ -45,6 +47,8 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('edit/{id}','UserController@post_Edit_Admin');
 
         Route::get('delete/{id}','UserController@get_Delete_Admin');
+
+        Route::get('export','UserController@get_Export_Admin' );
     });
 
     Route::group(['prefix' => 'role'], function() {
@@ -93,6 +97,7 @@ Route::group(['prefix' => 'admin'], function() {
 
 //Send mail
 Route::get('send_email','EmailController@sendEmailReminder');
+Route::get('ancom','EmailController@sendEmailAnCom');
 
 //Index Page
 Route::get('/','PhucTruongController@get_index' );
