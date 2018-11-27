@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 use App\User;
 use App\UserGroup;
 
@@ -32,6 +34,12 @@ class UserController extends Controller
 			return redirect('admin/login')->with('notification','Login no successfully');
 		}
 		
+	}
+
+	public function get_Logout_Admin()
+	{
+		Auth::logout();
+		return redirect('admin/login');
 	}
 
 	public function get_List_Admin()
@@ -105,4 +113,8 @@ class UserController extends Controller
 		return redirect()->back()->with('notification','Deleted successfully');
 	}
 	
+	public function get_Export_Admin()
+	{
+		return Excel::download(new UsersExport, 'users.xlsx');
+	}
 }
