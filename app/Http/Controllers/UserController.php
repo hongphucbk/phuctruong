@@ -9,6 +9,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use App\User;
 use App\UserGroup;
+use Mail;
+use App\Mail\UserVerify;
 
 class UserController extends Controller
 {
@@ -67,14 +69,19 @@ class UserController extends Controller
             're_password.same' =>'* Password again is not same',
         ]);
 
+		$confirmation_code = time().uniqid(true);
 		$user_group = UserGroup::where('name','Guest')->first();
 		$user = new User;
 		$user->name = $request->name;
 		$user->email = $request->email;
 		$user->users_group_id = $user_group->id;
+		$user->confirmation_code = $confirmation_code;
+		$user->confirmed = 0;
 		$user->password = bcrypt($request->password); //rand_string(6);
 		$user->save();
-		return redirect()->back()->with('notification','Register successfully');
+
+        Mail::to($user)->send(new UserVerify($user, $confirmation_code));
+		return redirect()->back()->with('notification','Register successfully. Please check mail to verify your account');
 	}
 
 	public function get_Login()
@@ -87,14 +94,14 @@ class UserController extends Controller
 	{
 		$this->validate($request,[
             'email' => 'required',
-            'password'=>'required',            
+            'password'=>'required',           
         ],
         [
             'email.required'=>'* Please input your email',
             'password.required'=>'* Please input password',
         ]);
 
-		if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
+		if(Auth::attempt(['email' => $request->email, 'password' => $request->password,'confirmed' => 1]))
         {
             return redirect('/');
         }

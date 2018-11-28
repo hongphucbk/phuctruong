@@ -107,6 +107,8 @@ Route::get('/','PhucTruongController@get_index' );
 Route::get('signup','UserController@get_Signup');
 Route::post('signup','UserController@post_Signup');
 
+Route::get('signup/verify/{code}', 'Auth\RegisterController@verify');
+
 Route::get('login','UserController@get_Login');
 Route::post('login','UserController@post_Login');
 
