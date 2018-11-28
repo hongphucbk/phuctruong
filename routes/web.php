@@ -103,6 +103,12 @@ Route::get('ancom','EmailController@sendEmailAnCom');
 //Index Page
 Route::get('/','PhucTruongController@get_index' );
 
+//Login pages
+Route::get('signup','UserController@get_Signup');
+Route::get('login','UserController@get_Login');
+Route::post('login','UserController@post_Login_Admin');
+Route::get('logout','UserController@get_Logout_Admin');
+
 Route::group(['prefix' => 'pages'], function() {
     
 });

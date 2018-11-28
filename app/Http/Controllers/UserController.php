@@ -42,6 +42,17 @@ class UserController extends Controller
 		return redirect('admin/login');
 	}
 
+	public function get_Signup()
+	{
+		return view('pages.login.signup');
+	}
+
+	public function get_Login()
+	{
+		return view('pages.login.login');
+	}
+	
+
 	public function get_List_Admin()
 	{
 		$users = User::all();
