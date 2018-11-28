@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/icons/icon_pt.png">
     <title>Login | Phuc Truong</title>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="fontend/css/bootstrap.min.css">
+
     <!-- Font Icon -->
     <link rel="stylesheet" href="fontend/fonts/material-icon/css/material-design-iconic-font.min.css">
 
@@ -19,19 +22,33 @@
         <div class="signin-content">
             <div class="signin-image">
                 <figure><img src="fontend/images/signin-image.jpg" alt="sing up image"></figure>
-                <a href="#" class="signup-image-link">Create an account</a>
+                <a href="signup" class="signup-image-link">Create an account</a>
             </div>
 
             <div class="signin-form">
                 <h2 class="form-title">Login</h2>
-                <form method="POST" class="register-form" id="login-form">
+                @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $err)
+                            {{$err}}<br>
+                        @endforeach
+                    </div>
+                @endif
+
+                @if(session('notification'))
+                    <div class="alert alert-success">
+                        {{session('notification')}}                         
+                    </div>
+                @endif
+                <form method="POST" class="register-form" id="login-form" action="login">
+                	{{ csrf_field() }}
                     <div class="form-group">
                         <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                        <input type="email" name="email" id="email" placeholder="Your Name"/>
                     </div>
                     <div class="form-group">
                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                        <input type="password" name="password" id="password" placeholder="Password"/>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />

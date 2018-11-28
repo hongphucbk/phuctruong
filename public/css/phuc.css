@@ -1,0 +1,18 @@
+/* ----------------------------------------------------------------
+	Top Phuc
+-----------------------------------------------------------------*/
+
+.phuc-custom { 
+	position: relative;
+	float: right;
+    margin: 38px 10px 40px 25px;
+    font-family: Arial;
+}
+
+.phuc-login { 
+	padding-top: 5px !important; 
+    padding-bottom: 5px !important;
+    color: white !important;
+    text-transform: none !important;
+}
+

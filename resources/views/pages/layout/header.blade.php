@@ -595,6 +595,19 @@
 				</li>
 			</ul>
 
+			<!-- <div> Phuc Truong Hong </div> -->
+
+			<!-- Top User
+			============================================= -->
+			<div class="dropdown phuc-custom" >
+				    <lable class="label label-success dropdown-toggle" data-toggle="dropdown">Phuc Truong Hong
+				    <span class="caret"></span></label>
+				    <ul class="dropdown-menu" style="background-color: none">
+				      <li><a class="phuc-login" href="#">Infomation</a></li>
+				      <li><a class="phuc-login" href="#">Logout</a></li>
+				    </ul>
+			</div>
+
 			<!-- Top Cart
 			============================================= -->
 			<div id="top-cart">
@@ -640,6 +653,8 @@
 					<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
 				</form>
 			</div><!-- #top-search end -->
+
+
 
 		</nav><!-- #primary-menu end -->
 

@@ -47,11 +47,67 @@ class UserController extends Controller
 		return view('pages.login.signup');
 	}
 
+	public function post_Signup(Request $request)
+	{
+		$this->validate($request,[
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'password'=>'required|min:5|max:32',
+            're_password' => 'required|same:password'
+            
+        ],
+        [
+            'name.required'=>'* Please input your name',
+            'email.required'=>'* Please input your email',
+            'email.unique'=>'* Email had exist',
+            'password.required'=>'* Please input password',
+            'password.min'=>'* Password is 5 character minimum',
+            'password.max'=>'* Password is 32 character maximum',
+            're_password.required' =>'* Please input password again',
+            're_password.same' =>'* Password again is not same',
+        ]);
+
+		$user_group = UserGroup::where('name','Guest')->first();
+		$user = new User;
+		$user->name = $request->name;
+		$user->email = $request->email;
+		$user->users_group_id = $user_group->id;
+		$user->password = bcrypt($request->password); //rand_string(6);
+		$user->save();
+		return redirect()->back()->with('notification','Register successfully');
+	}
+
 	public function get_Login()
 	{
+		//Return view
 		return view('pages.login.login');
 	}
 	
+	public function post_Login(Request $request)
+	{
+		$this->validate($request,[
+            'email' => 'required',
+            'password'=>'required',            
+        ],
+        [
+            'email.required'=>'* Please input your email',
+            'password.required'=>'* Please input password',
+        ]);
+
+		if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
+        {
+            return redirect('/');
+        }
+        else{
+            return redirect('login')->with('notification','Login not successfully');
+        }
+	}
+
+	public function get_Logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 
 	public function get_List_Admin()
 	{
