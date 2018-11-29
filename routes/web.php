@@ -109,11 +109,15 @@ Route::post('signup','UserController@post_Signup');
 
 Route::get('signup/verify/{code}', 'Auth\RegisterController@verify');
 
-Route::get('login','UserController@get_Login');
+Route::get('login','UserController@get_Login')->name('login');
 Route::post('login','UserController@post_Login');
 
-Route::get('logout','UserController@get_Logout');
+Route::get('logout','UserController@get_Logout')->name('logout');
 
 Route::group(['prefix' => 'pages'], function() {
     
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

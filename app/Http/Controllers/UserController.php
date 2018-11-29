@@ -11,6 +11,8 @@ use App\User;
 use App\UserGroup;
 use Mail;
 use App\Mail\UserVerify;
+//use Illuminate\Contracts\Auth\CanResetPassword;
+use Illuminate\Auth\Passwords\CanResetPassword;
 
 class UserController extends Controller
 {
