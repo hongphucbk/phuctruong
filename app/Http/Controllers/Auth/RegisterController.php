@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     /**
@@ -68,5 +68,24 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function verify($code)
+    {
+        $user = User::where('confirmation_code', $code);
+
+        if ($user->count() > 0) {
+            $user->update([
+                'confirmed' => 1,
+                'confirmation_code' => null,
+                'email_verified_at' => now()
+            ]);
+            $notification_status = 'Verify successfully';
+        } else {
+            $notification_status ='Verify fail';
+        }
+
+        return redirect('login')->with('notification', $notification_status);
+ 
     }
 }

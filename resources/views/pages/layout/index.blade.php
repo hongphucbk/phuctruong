@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/phuc.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Document Title

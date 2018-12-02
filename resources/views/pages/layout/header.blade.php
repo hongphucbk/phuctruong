@@ -595,6 +595,24 @@
 				</li>
 			</ul>
 
+			<!-- <div> Phuc Truong Hong </div> -->
+
+			<!-- Top User
+			============================================= -->
+			<div class="dropdown phuc-custom" >
+				@if(Auth::check())
+				    <span class="label label-success dropdown-toggle" data-toggle="dropdown"> {{Auth::user()->name }}
+				    <span class="caret"></span></span>
+				    <ul class="dropdown-menu" style="background-color: none">
+				      <li><a class="phuc-login" href="#">Infomation</a></li>
+				      <li><a class="phuc-login" href="logout">Logout</a></li>
+				    </ul>
+				@else
+					<a href="signup">Signup</a> |
+					<a href="login">Login</a>
+				@endif
+			</div>
+
 			<!-- Top Cart
 			============================================= -->
 			<div id="top-cart">
@@ -640,6 +658,8 @@
 					<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
 				</form>
 			</div><!-- #top-search end -->
+
+
 
 		</nav><!-- #primary-menu end -->
 
