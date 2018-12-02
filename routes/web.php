@@ -114,10 +114,14 @@ Route::post('login','UserController@post_Login');
 
 Route::get('logout','UserController@get_Logout')->name('logout');
 
+Route::get('password/reset','UserController@get_ResetPassword');
+Route::post('password/reset','UserController@post_ResetPassword');
+
+Route::get('password/reset/{token}','UserController@get_NewPassword');
+Route::post('password/reset/{token}','UserController@post_NewPassword');
+
 Route::group(['prefix' => 'pages'], function() {
     
 });
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

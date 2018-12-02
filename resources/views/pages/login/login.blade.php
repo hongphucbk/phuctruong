@@ -23,6 +23,7 @@
             <div class="signin-image">
                 <figure><img src="fontend/images/signin-image.jpg" alt="sing up image"></figure>
                 <a href="signup" class="signup-image-link">Create an account</a>
+                <a href="password/reset" class="signup-image-link">Forget password ?</a>
             </div>
 
             <div class="signin-form">

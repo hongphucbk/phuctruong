@@ -8,11 +8,15 @@ use App\Exports\UsersExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use App\User;
+use App\PassReset;
 use App\UserGroup;
 use Mail;
 use App\Mail\UserVerify;
+use App\Mail\PasswordReset;
+use Hash;
+
 //use Illuminate\Contracts\Auth\CanResetPassword;
-use Illuminate\Auth\Passwords\CanResetPassword;
+//use Illuminate\Auth\Passwords\CanResetPassword;
 
 class UserController extends Controller
 {
@@ -117,6 +121,79 @@ class UserController extends Controller
         Auth::logout();
         return redirect('/');
     }
+
+    public function get_ResetPassword()
+    {
+    	return view('pages.login.passwordreset');
+    }
+
+    public function post_ResetPassword(Request $request)
+	{
+		$this->validate($request,[
+            'email' => 'required',           
+        ],
+        [
+            'email.required'=>'* Please input your email',
+        ]);
+
+		$new_pass = rand_string(10);
+		$token = Hash::make($new_pass);
+
+		//$token = bcrypt($new_pass);
+
+		$user = User::where('email',$request->email)->first();
+		if ($user) {
+			$passreset = new PassReset;
+			$passreset->email = $request->email;
+			$passreset->token = $token;
+			$passreset->save();
+
+			Mail::to($user)->send(new PasswordReset($user, $new_pass));
+			return redirect()->back()->with('notification','Please check mail to get password');
+
+		} else {
+			return redirect('password/reset')->with('notification','Email is not exist. Please register');
+		}
+		  
+	}
+
+	public function get_NewPassword($new_password)
+    {
+    	$pass_resets = PassReset::all();
+    	foreach ($pass_resets as $key => $val) {
+    		if(Hash::check($new_password, $val->token)){
+		    	$email = $val->email;
+	    		return view('pages.login.newpassword',compact('new_password','email'));
+	    	} else {
+	    		return view('pages.login.invalid');
+			}
+    	}
+		return view('pages.login.invalid');
+    }
+
+    public function post_NewPassword($new_password,Request $request)
+	{
+		$this->validate($request,[
+            'password'=>'required|min:5|max:32',
+            're_password' => 'required|same:password'         
+        ],
+        [
+            'password.required'=>'* Please input password',
+            'password.min'=>'* Password is 5 character minimum',
+            'password.max'=>'* Password is 32 character maximum',
+            're_password.required' =>'* Please input password again',
+            're_password.same' =>'* Password again is not same',
+        ]);
+
+		$user = User::where('email',$request->email)->first();
+		$user->password = bcrypt($request->password);
+		$user->save();
+
+		$token = PassReset::where('email',$request->email)->first();
+		$token->delete();
+
+		return redirect('login')->with('notification','Change password successfully. Please login to page');		  
+	}
 
 	public function get_List_Admin()
 	{
