@@ -45,7 +45,7 @@
                 	{{ csrf_field() }}
                     <div class="form-group">
                         <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="email" name="email" id="email" placeholder="Your Name"/>
+                        <input type="email" name="email" id="email" placeholder="Your Email"/>
                     </div>
                     <div class="form-group">
                         <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>

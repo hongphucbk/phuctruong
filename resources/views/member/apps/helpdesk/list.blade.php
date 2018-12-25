@@ -87,8 +87,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Date</th>
+                                    <th>Category</th>
                                     <th>Subject</th>
-
                                     <th>Status</th>
                                     <th>Assign to</th>
                                     <th>Action</th>
@@ -99,6 +99,7 @@
                                 <tr>
                                     <td>{{ $val->id }}</td>
                                     <td>{{date('d-M-Y', strtotime($val->created_at))}} </td>
+                                    <td>{{ $val->helpdesk_question->helpdesk_catogery->name}} </td>
                                     <td>{{ $val->helpdesk_question->brief }}</td>
                                     <td>{!! get_Status_Helpdesk($val->status) !!}</td>
                                     <td>Phuc Truong</td>

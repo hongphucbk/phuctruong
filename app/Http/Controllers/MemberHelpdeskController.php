@@ -37,7 +37,7 @@ class MemberHelpdeskController extends Controller
 		$ticket->user_id = Auth::user()->id;
 		$ticket->save();
 
-		$helpdesk_question_id = HelpdeskQuestion::where('brief',$request->brief)->last()->id;
+		$helpdesk_question_id = HelpdeskQuestion::orderBy('id','desc')->first()->id;
 		$ticket = new HelpdeskActivity;
 		$ticket->helpdesk_question_id = $helpdesk_question_id;
 		$ticket->status = 10;
