@@ -37,7 +37,7 @@
 							<ul>
 								<li><a href="index-blog.html"><div>Blog - Layout 1</div></a></li>
 								<li><a href="index-blog-2.html"><div>Blog - Layout 2</div></a></li>
-								<li><a href="index-blog-3.html"><div>Blog - Layout 3</div></a></li>
+								
 							</ul>
 						</li>
 						<li><a href="index-shop.html"><div>Home - Shop</div></a>
@@ -49,33 +49,24 @@
 						<li><a href="index-magazine.html"><div>Home - Magazine</div></a>
 							<ul>
 								<li><a href="index-magazine.html"><div>Magazine - Layout 1</div></a></li>
-								<li><a href="index-magazine-2.html"><div>Magazine - Layout 2</div></a></li>
-								<li><a href="index-magazine-3.html"><div>Magazine - Layout 3</div></a></li>
+								
 							</ul>
 						</li>
 						<li><a href="landing.html"><div>Home - Landing Page</div></a>
 							<ul>
 								<li><a href="landing.html"><div>Landing Page - Layout 1</div></a></li>
 								<li><a href="landing-2.html"><div>Landing Page - Layout 2</div></a></li>
-								<li><a href="landing-3.html"><div>Landing Page - Layout 3</div></a></li>
-								<li><a href="landing-4.html"><div>Landing Page - Layout 4</div></a></li>
-								<li><a href="landing-5.html"><div>Landing Page - Layout 5</div></a></li>
+								
 							</ul>
 						</li>
 						<li><a href="index-fullscreen-image.html"><div>Home - Full Screen</div></a>
 							<ul>
 								<li><a href="index-fullscreen-image.html"><div>Full Screen - Image</div></a></li>
 								<li><a href="index-fullscreen-slider.html"><div>Full Screen - Slider</div></a></li>
-								<li><a href="index-fullscreen-video.html"><div>Full Screen - Video</div></a></li>
+								
 							</ul>
 						</li>
-						<li><a href="index-onepage.html"><div>Home - One Page</div></a>
-							<ul>
-								<li><a href="index-onepage.html"><div>One Page - Default</div></a></li>
-								<li><a href="index-onepage-2.html"><div>One Page - Submenu</div></a></li>
-								<li><a href="index-onepage-3.html"><div>One Page - Dots Style</div></a></li>
-							</ul>
-						</li>
+						
 						<li><a href="index-wedding.html"><div>Home - Wedding</div></a></li>
 						<li><a href="index-restaurant.html"><div>Home - Restaurant</div></a></li>
 						<li><a href="index-events.html"><div>Home - Events</div></a></li>
@@ -126,9 +117,7 @@
 									<ul>
 										<li><a href="static-parallax.html"><div>Static - Parallax</div></a></li>
 										<li><a href="static-image.html"><div>Static - Image</div></a></li>
-										<li><a href="static-thumbs-grid.html"><div>Static - Thumb Gallery</div></a></li>
-										<li><a href="static-html5-video.html"><div>Static - HTML5 Video</div></a></li>
-										<li><a href="static-embed-video.html"><div>Static - Embedded Video</div></a></li>
+										
 									</ul>
 								</li>
 							</ul>
@@ -569,17 +558,7 @@
 							<li><a href="component-range-slider.html"><div><i class="icon-line-move"></i>Range Slider</div></a></li>
 							<li><a href="component-ratings.html"><div><i class="icon-star3"></i>Star Ratings</div></a></li>
 						</ul>
-						<ul class="mega-menu-column col-5">
-							<li><a href="pricing.html"><div><i class="icon-dollar"></i>Pricing Boxes</div></a></li>
-							<li><a href="process-steps.html"><div><i class="icon-thumbs-up"></i>Process Steps</div></a></li>
-							<li><a href="promo-boxes.html"><div><i class="icon-rocket"></i>Promo Boxes</div></a></li>
-							<li><a href="quotes-blockquotes.html"><div><i class="icon-quote-left"></i>Blockquotes</div></a></li>
-							<li><a href="responsive.html"><div><i class="icon-laptop2"></i>Responsive</div></a></li>
-							<li><a href="sections.html"><div><i class="icon-folder-open"></i>Sections</div></a></li>
-							<li><a href="social-icons.html"><div><i class="icon-facebook2"></i>Social Icons</div></a></li>
-							<li><a href="component-select-picker.html"><div><i class="icon-select"></i>Select Picker</div></a></li>
-							<li><a href="component-select-box.html"><div><i class="icon-line-columns"></i>Select Boxes</div></a></li>
-						</ul>
+						
 						<ul class="mega-menu-column col-5">
 							<li><a href="style-boxes.html"><div><i class="icon-exclamation-sign"></i>Alert Boxes</div></a></li>
 							<li><a href="styled-icons.html"><div><i class="icon-flag2"></i>Styled Icons</div></a></li>
@@ -604,7 +583,7 @@
 				    <span class="label label-success dropdown-toggle" data-toggle="dropdown"> {{Auth::user()->name }}
 				    <span class="caret"></span></span>
 				    <ul class="dropdown-menu" style="background-color: none">
-				      <li><a class="phuc-login" href="#">Infomation</a></li>
+				      <li><a class="phuc-login" href="member/app/helpdesk">My page</a></li>
 				      <li><a class="phuc-login" href="logout">Logout</a></li>
 				    </ul>
 				@else

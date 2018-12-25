@@ -44,4 +44,43 @@ function get_Admin_Helpdesk_All_Category()
 	return count( App\HelpdeskCategory::all() );
 }
 
+function get_Status_Helpdesk($status)
+{
+	if($status == 10 )
+        return '<span class="label label-info">Open</span>';
+    else if($status == 20)
+        return '<span class="label label-success">Active</span>';
+    // elseif($status == 30)
+    //     return '<span class="label label-success">Chờ thanh toán</span>';
+    elseif($status == 40)
+        return '<span class="label label-success">Progress</span>';
+    // elseif($status == 50)
+    //     return '<span class="label label-success"></span>';
+    elseif($status == 60)
+        return '<span class="label label-success">Pending</span>';
+    elseif($status == 80)
+        return '<span class="label label-success">Complete</span>';
+    elseif($status == 90)
+        return '<span class="label label-success">Reject</span>';
+    else{
+        return '<span class="label label-danger">NO DEFINE</span>';
+    }
+    
+}
+
+function get_Member_Helpdesk_Ticket_Open()
+{
+	return count( App\HelpdeskActivity::where('status',10)->get() );
+}
+
+function get_Member_Helpdesk_Ticket_Complete()
+{
+	return count( App\HelpdeskActivity::where('status',80)->get() );
+}
+
+function get_Member_Helpdesk_Ticket_Pending()
+{
+	return count( App\HelpdeskActivity::where('status','>=',20)->where('status','<=',60)->get() );
+}
+
 ?>
