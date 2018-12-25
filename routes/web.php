@@ -96,6 +96,30 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
 
 });
 
+//Member pages
+Route::group(['prefix' => 'member'], function() {
+    Route::group(['prefix' => 'app'], function() {
+        Route::group(['prefix' => 'helpdesk'], function() {
+            Route::get('/','MemberHelpdeskController@get_List');
+
+            Route::post('add','MemberHelpdeskController@post_Add');
+        });
+
+        Route::group(['prefix' => 'category'], function() {
+            Route::get('/','HelpdeskCategoryController@get_List_Admin');
+
+            Route::get('add','HelpdeskCategoryController@get_Add_Admin');
+            
+
+            Route::get('edit/{id}','HelpdeskCategoryController@get_Edit_Admin');
+            Route::post('edit/{id}','HelpdeskCategoryController@post_Edit_Admin');
+
+            Route::get('delete/{id}','HelpdeskCategoryController@get_Delete_Admin');
+        });
+    });
+
+});
+
 //Send mail
 Route::get('send_email','EmailController@sendEmailReminder');
 Route::get('ancom','EmailController@sendEmailAnCom');
@@ -120,8 +144,21 @@ Route::post('password/reset','UserController@post_ResetPassword');
 Route::get('password/reset/{token}','UserController@get_NewPassword');
 Route::post('password/reset/{token}','UserController@post_NewPassword');
 
-Route::group(['prefix' => 'pages'], function() {
-    
+//webserver
+Route::group(['prefix' => 'webserver'], function() {
+    Route::group(['prefix' => 's71200'], function() {
+        Route::get('/','WebserverController@get_Page_S71200');
+
+        // Route::get('add','UserGroupController@get_Add_Admin');
+        // Route::post('add','UserGroupController@post_Add_Admin');
+
+        // Route::get('edit/{id}','UserGroupController@get_Edit_Admin');
+        // Route::post('edit/{id}','UserGroupController@post_Edit_Admin');
+
+        // Route::get('delete/{id}','UserGroupController@get_Delete_Admin');
+    });
+
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
