@@ -15,7 +15,7 @@ class MemberHelpdeskController extends Controller
 
 	public function get_List()
 	{
-		$tickets = HelpdeskActivity::all();
+		$tickets = HelpdeskActivity::where('id',Auth::user()->id)->get();
 		$category = HelpdeskCategory::all();
 		//$user_group = UserGroup::all();
 		return view('member.apps.helpdesk.list', compact('tickets','category'));
