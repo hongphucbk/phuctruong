@@ -47,7 +47,7 @@
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card">
                                 <div class="box bg-info text-center">
-                                    <h1 class="font-light text-white">2,064</h1>
+                                    <h1 class="font-light text-white">{{count($tickets)}}</h1>
                                     <h6 class="text-white">Total Tickets</h6>
                                 </div>
                             </div>
@@ -56,8 +56,8 @@
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card">
                                 <div class="box bg-primary text-center">
-                                    <h1 class="font-light text-white">1,738</h1>
-                                    <h6 class="text-white">Responded</h6>
+                                    <h1 class="font-light text-white">{{get_Admin_Helpdesk_Ticket_Open()}}</h1>
+                                    <h6 class="text-white">Open</h6>
                                 </div>
                             </div>
                         </div>
@@ -65,8 +65,8 @@
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card">
                                 <div class="box bg-success text-center">
-                                    <h1 class="font-light text-white">1100</h1>
-                                    <h6 class="text-white">Resolve</h6>
+                                    <h1 class="font-light text-white">{{get_Admin_Helpdesk_Ticket_Complete()}}</h1>
+                                    <h6 class="text-white">Complete</h6>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card">
                                 <div class="box bg-dark text-center">
-                                    <h1 class="font-light text-white">964</h1>
+                                    <h1 class="font-light text-white">{{get_Admin_Helpdesk_Ticket_Pending()}}</h1>
                                     <h6 class="text-white">Pending</h6>
                                 </div>
                             </div>
@@ -87,28 +87,28 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Opened By</th>
-                                    <th>Cust. Email</th>
+                                    <th>Date</th>
+                                    <th>Category</th>
                                     <th>Subject</th>
                                     <th>Status</th>
                                     <th>Assign to</th>
-                                    <th>Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach($tickets as $key => $val)
                                 <tr>
-                                    <td>4124</td>
-                                    <td>
-                                        <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user" class="img-circle" /> Rana Dagubati</a>
-                                    </td>
-                                    <td>ranabati@gmail.com</td>
-                                    <td>How to set navigation</td>
-                                    <td><span class="label label-success">Complete</span> </td>
-                                    <td>Hritik Roshan</td>
-                                    <td>12-10-2017</td>
+                                    <td>{{ $val->id }}</td>
+                                    <td>{{ $val->helpdesk_question->user->name}}</td>
+                                    <td>{{date('d-M-Y', strtotime($val->created_at))}} </td>
+                                    <td>{{ $val->helpdesk_question->helpdesk_catogery->name}} </td>
+                                    <td>{{ $val->helpdesk_question->brief }}</td>
+                                    <td>{!! get_Status_Helpdesk($val->status) !!}</td>
+                                    <td>Phuc Truong</td>
                                     <td>
                                         <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
+                                        <a href="admin/app/helpdesk/edit/{{$val->id}}">
+                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline edit-row-btn" data-toggle="tooltip" data-original-title="Edit"><i class="ti-marker-alt" aria-hidden="true"></i>Edit</button></a>
                                     </td>
                                 </tr>
                             @endforeach

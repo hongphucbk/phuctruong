@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\UserGroup','users_group_id','id');
     }
+
+    public function helpdesk_question()
+    {
+        return $this->hasMany('App\HelpdeskQuestion','user_id','id');
+    }
 }
