@@ -67,20 +67,34 @@ function get_Status_Helpdesk($status)
     }
     
 }
-
-function get_Member_Helpdesk_Ticket_Open()
+function get_Admin_Helpdesk_Ticket_Open()
 {
-	return count( App\HelpdeskActivity::where('status',10)->get() );
+    return count( App\HelpdeskActivity::where('status',10)->get() );
 }
 
-function get_Member_Helpdesk_Ticket_Complete()
+function get_Admin_Helpdesk_Ticket_Complete()
 {
-	return count( App\HelpdeskActivity::where('status',80)->get() );
+    return count( App\HelpdeskActivity::where('status',80)->get() );
 }
 
-function get_Member_Helpdesk_Ticket_Pending()
+function get_Admin_Helpdesk_Ticket_Pending()
 {
-	return count( App\HelpdeskActivity::where('status','>=',20)->where('status','<=',60)->get() );
+    return count( App\HelpdeskActivity::where('status','>=',20)->where('status','<=',60)->get() );
+}
+
+function get_Member_Helpdesk_Ticket_Open($id)
+{
+	return count( App\HelpdeskActivity::where('id',$id)->where('status',10)->get() );
+}
+
+function get_Member_Helpdesk_Ticket_Complete($id)
+{
+	return count( App\HelpdeskActivity::where('id',$id)->where('status',80)->get() );
+}
+
+function get_Member_Helpdesk_Ticket_Pending($id)
+{
+	return count( App\HelpdeskActivity::where('id',$id)->where('status','>=',20)->where('status','<=',60)->get() );
 }
 
 ?>

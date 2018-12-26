@@ -79,6 +79,9 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
     Route::group(['prefix' => 'app'], function() {
         Route::group(['prefix' => 'helpdesk'], function() {
             Route::get('/','HelpdeskController@get_List_Admin');
+
+            Route::get('edit/{id}','HelpdeskController@get_Edit_Admin');
+            Route::post('edit/{id}','HelpdeskController@post_Edit_Admin');
         });
 
         Route::group(['prefix' => 'category'], function() {

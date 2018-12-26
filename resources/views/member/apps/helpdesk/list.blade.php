@@ -56,7 +56,7 @@
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card">
                                 <div class="box bg-primary text-center">
-                                    <h1 class="font-light text-white">{{get_Member_Helpdesk_Ticket_Open()}}</h1>
+                                    <h1 class="font-light text-white">{{get_Member_Helpdesk_Ticket_Open(Auth::user()->id)}}</h1>
                                     <h6 class="text-white">Open</h6>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card">
                                 <div class="box bg-success text-center">
-                                    <h1 class="font-light text-white">{{get_Member_Helpdesk_Ticket_Complete()}}</h1>
+                                    <h1 class="font-light text-white">{{get_Member_Helpdesk_Ticket_Complete(Auth::user()->id)}}</h1>
                                     <h6 class="text-white">Complete</h6>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                         <div class="col-md-6 col-lg-3 col-xlg-3">
                             <div class="card">
                                 <div class="box bg-dark text-center">
-                                    <h1 class="font-light text-white">{{get_Member_Helpdesk_Ticket_Pending()}}</h1>
+                                    <h1 class="font-light text-white">{{get_Member_Helpdesk_Ticket_Pending(Auth::user()->id)}}</h1>
                                     <h6 class="text-white">Pending</h6>
                                 </div>
                             </div>
