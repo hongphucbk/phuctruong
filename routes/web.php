@@ -106,6 +106,8 @@ Route::group(['prefix' => 'member'], function() {
             Route::get('/','MemberHelpdeskController@get_List');
 
             Route::post('add','MemberHelpdeskController@post_Add');
+
+            Route::get('detail/{id}','MemberHelpdeskController@get_Detail');
         });
 
         Route::group(['prefix' => 'category'], function() {

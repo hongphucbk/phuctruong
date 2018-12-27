@@ -7,6 +7,7 @@ use App\User;
 use App\HelpdeskActivity;
 use App\HelpdeskCategory;
 use App\Role;
+use App\HelpdeskStatus;
 
 class HelpdeskController extends Controller
 {
@@ -44,22 +45,25 @@ class HelpdeskController extends Controller
 	{
 		$helpdesk_activity = HelpdeskActivity::find($id);
 		$category = HelpdeskCategory::all();
-		return view('admin.apps.helpdesk.edit',compact('helpdesk_activity','category'));
+		$users = User::where('users_group_id','<=',4)->get();
+		$status = HelpdeskStatus::all();
+		return view('admin.apps.helpdesk.edit',compact('helpdesk_activity','category','users','status'));
 	}
 
 	public function post_Edit_Admin($id, Request $request)
 	{
 		$this->validate($request,[
-            'name' => 'required',
+            'status' => 'required',
         ],
         [
-            'name.required'=>'Please input your role',
+            'status.required'=>'Please input your status',
         ]);
 
-		$role = Role::find($id);
-		$role->name = $request->name;
-		$role->note = $request->note;
-		$role->save();
+		$ticket = HelpdeskActivity::find($id);
+		$ticket->status = $request->status;
+		$ticket->solve = $request->solve;
+		$ticket->assign_id = $request->assign_id;
+		$ticket->save();
 		return redirect()->back()->with('notification','Edit successfully');
 	}
 	
