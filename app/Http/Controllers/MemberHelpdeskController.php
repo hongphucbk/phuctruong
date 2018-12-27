@@ -9,13 +9,14 @@ use App\HelpdeskActivity;
 use App\Role;
 use App\HelpdeskCategory;
 use App\HelpdeskQuestion;
+use App\HelpdeskAnswer;
 
 class MemberHelpdeskController extends Controller
 {
 
 	public function get_List()
 	{
-		$tickets = HelpdeskActivity::where('id',Auth::user()->id)->get();
+		$tickets = HelpdeskActivity::where('raised_id',Auth::user()->id)->get();
 		$category = HelpdeskCategory::all();
 		//$user_group = UserGroup::all();
 		return view('member.apps.helpdesk.list', compact('tickets','category'));
@@ -38,17 +39,20 @@ class MemberHelpdeskController extends Controller
 		$ticket->save();
 
 		$helpdesk_question_id = HelpdeskQuestion::orderBy('id','desc')->first()->id;
+
 		$ticket = new HelpdeskActivity;
 		$ticket->helpdesk_question_id = $helpdesk_question_id;
+		$ticket->raised_id = Auth::user()->id;
 		$ticket->status = 10;
 		$ticket->save();
 		return redirect()->back()->with('notification','Add successfully');
 	}
 
-	public function get_Edit_Admin($id)
+	public function get_Detail($id)
 	{
-		$role = Role::find($id);
-		return view('admin.role.edit',compact('role'));
+		$helpdesk_activity = HelpdeskActivity::find($id);
+		$category = HelpdeskCategory::all();
+		return view('member.apps.helpdesk.detail',compact('helpdesk_activity','category'));
 	}
 
 	public function post_Edit_Admin($id, Request $request)

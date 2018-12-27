@@ -102,8 +102,14 @@
                                     <td>{{ $val->helpdesk_question->helpdesk_catogery->name}} </td>
                                     <td>{{ $val->helpdesk_question->brief }}</td>
                                     <td>{!! get_Status_Helpdesk($val->status) !!}</td>
-                                    <td>Phuc Truong</td>
+                                    <td>@if($val->assign_id != Null)
+                                        {{ $val->user->name }}
+                                        @endif
+                                    </td>
                                     <td>
+                                        <a href="member/app/helpdesk/detail/{{$val->id}}">
+                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline edit-row-btn" data-toggle="tooltip" data-original-title="Edit"><i class="ti-marker-alt" aria-hidden="true"></i>Edit</button></a>
+
                                         <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                     </td>
                                 </tr>

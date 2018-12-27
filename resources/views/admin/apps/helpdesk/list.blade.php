@@ -104,7 +104,10 @@
                                     <td>{{ $val->helpdesk_question->helpdesk_catogery->name}} </td>
                                     <td>{{ $val->helpdesk_question->brief }}</td>
                                     <td>{!! get_Status_Helpdesk($val->status) !!}</td>
-                                    <td>Phuc Truong</td>
+                                    <td>@if($val->assign_id != Null)
+                                        {{ $val->user->name }}
+                                        @endif
+                                    </td>
                                     <td>
                                         <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                         <a href="admin/app/helpdesk/edit/{{$val->id}}">

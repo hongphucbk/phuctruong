@@ -17,4 +17,9 @@ class HelpdeskActivity extends Model
     {
     	return $this->belongsTo('App\HelpdeskAnswer','helpdesk_answer_id','id');
     }
+
+    public function user()
+    {
+    	return $this->belongsTo('App\User','assign_id','id');
+    }
 }
