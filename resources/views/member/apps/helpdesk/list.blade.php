@@ -107,10 +107,14 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="member/app/helpdesk/detail/{{$val->id}}">
+                                        @if($val->status == 10)
+                                        <a href="member/app/helpdesk/edit/{{$val->id}}">
                                         <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline edit-row-btn" data-toggle="tooltip" data-original-title="Edit"><i class="ti-marker-alt" aria-hidden="true"></i>Edit</button></a>
 
                                         <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
+                                        @endif
+                                        <a href="member/app/helpdesk/detail/{{$val->id}}">
+                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline edit-row-btn" data-toggle="tooltip" data-original-title="Detail"><i class="ti-more-alt" aria-hidden="true"></i></button></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -197,7 +201,7 @@
 <script src="source/node_modules/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
 <!--FooTable init-->
 <script src="source/dist/js/pages/footable-init.js"></script>
-<script src="dist/js/sidebarmenu.js"></script>
+<script src="source/dist/js/sidebarmenu.js"></script>
 <!--stickey kit -->
 <script src="source/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
 <script src="source/node_modules/sparkline/jquery.sparkline.min.js"></script>

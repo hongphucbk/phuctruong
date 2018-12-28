@@ -10,6 +10,8 @@ use App\Role;
 use App\HelpdeskCategory;
 use App\HelpdeskQuestion;
 use App\HelpdeskAnswer;
+use App\HelpdeskStatus;
+
 
 class MemberHelpdeskController extends Controller
 {
@@ -52,22 +54,39 @@ class MemberHelpdeskController extends Controller
 	{
 		$helpdesk_activity = HelpdeskActivity::find($id);
 		$category = HelpdeskCategory::all();
-		return view('member.apps.helpdesk.detail',compact('helpdesk_activity','category'));
+		$users = User::where('users_group_id','<=',4)->get();
+		$status = HelpdeskStatus::all();
+		return view('member.apps.helpdesk.detail',compact('helpdesk_activity','category','users','status'));
 	}
 
-	public function post_Edit_Admin($id, Request $request)
+	
+	public function get_Edit($id)
+	{
+		$helpdesk_activity = HelpdeskActivity::find($id);
+		$category = HelpdeskCategory::all();
+		$users = User::where('users_group_id','<=',4)->get();
+		$status = HelpdeskStatus::all();
+		return view('member.apps.helpdesk.edit',compact('helpdesk_activity','category','users','status'));
+	}
+
+	public function post_Edit($id, Request $request)
 	{
 		$this->validate($request,[
-            'name' => 'required',
+            'brief' => 'required',
         ],
         [
-            'name.required'=>'Please input your role',
+            'brief.required'=>'Please input your subject',
         ]);
 
-		$role = Role::find($id);
-		$role->name = $request->name;
-		$role->note = $request->note;
-		$role->save();
+		$ticket = HelpdeskActivity::find($id);
+
+		$ticket = HelpdeskQuestion::find($ticket->helpdesk_question_id);
+		$ticket->brief = $request->brief;
+		$ticket->helpdesk_category_id = $request->category;
+		$ticket->content = $request->content;
+		$ticket->user_id = Auth::user()->id;
+		$ticket->save();
+
 		return redirect()->back()->with('notification','Edit successfully');
 	}
 	

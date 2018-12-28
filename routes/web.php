@@ -108,19 +108,12 @@ Route::group(['prefix' => 'member'], function() {
             Route::post('add','MemberHelpdeskController@post_Add');
 
             Route::get('detail/{id}','MemberHelpdeskController@get_Detail');
+
+            Route::get('edit/{id}','MemberHelpdeskController@get_Edit');
+            Route::post('edit/{id}','MemberHelpdeskController@post_Edit');
         });
 
-        Route::group(['prefix' => 'category'], function() {
-            Route::get('/','HelpdeskCategoryController@get_List_Admin');
-
-            Route::get('add','HelpdeskCategoryController@get_Add_Admin');
-            
-
-            Route::get('edit/{id}','HelpdeskCategoryController@get_Edit_Admin');
-            Route::post('edit/{id}','HelpdeskCategoryController@post_Edit_Admin');
-
-            Route::get('delete/{id}','HelpdeskCategoryController@get_Delete_Admin');
-        });
+        
     });
 
 });

@@ -47,85 +47,52 @@
                             {{session('notification')}}                         
                         </div>
                     @endif
-                    <form action="admin/helpdesk/edit/{{$helpdesk_activity->id}}" method="post">
+                    <form action="member/app/helpdesk/edit/{{$helpdesk_activity->id}}" method="post">
                         {{ csrf_field() }}
                         <div class="form-body">
-                            <h3 class="card-title">Ticket Subject <span style="color: blue">{{$helpdesk_activity->helpdesk_question->brief}}</span></h3>
+                            <h3 class="card-title">Ticket Subject <span style="color: blue">{{$helpdesk_activity->helpdesk_question->brief}}</span> <span style="margin-left: 10px">Email</span><span style="color: blue;margin-left: 5px">{{$helpdesk_activity->helpdesk_question->user->email}}</span></h3>
                             <hr>
                             <div class="row p-t-20">
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label class="control-label">Subject</label>
-                                        <input type="text" class="form-control" name="name" value="{{$helpdesk_activity->helpdesk_question->brief}}">
+                                        <input type="text" class="form-control" name="brief" value="{{$helpdesk_activity->helpdesk_question->brief}}">
+                                        <small class="form-control-feedback"> Your subject </small>
                                     </div>
                                 </div>
                                 <!--/span-->
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <label class="control-label">Content</label>
-                                        <input type="text"   class="form-control form-control-danger" name="email" value="{{$helpdesk_activity->helpdesk_question->content}}">
+                                        <input type="text"   class="form-control form-control-danger" name="content" value="{{$helpdesk_activity->helpdesk_question->content}}">
+                                        <small class="form-control-feedback"> Your content </small>
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Category</label>
-                                        <select class="form-control form-control-danger" name="users_group_id">
+                                        <select class="form-control form-control-danger" name="category">
+                                            
                                             @foreach($category as $key => $val)
+                                            <option 
                                             @if($helpdesk_activity->helpdesk_question->helpdesk_category_id == $val->id)
-                                                <option value="{{$val->id}}">{{$val->name}}</option>
+                                                selected=""
                                             @endif
+                                            value="{{$val->id}}">{{$val->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <!--/span-->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Assign to</label>
-                                        <select class="form-control form-control-danger" name="assign_id">
-                                            @foreach($users as $key => $val)
-                                            
-                                            @if($helpdesk_activity->assign_id == $val->id)
-                                                <option value="{{$val->id}}">{{$val->name}}</option>
-                                            @endif
-                                            
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label">Status</label>
-                                        <select class="form-control form-control-danger" name="status">
-                                            @foreach($status as $key => $val)
-                                            @if($helpdesk_activity->status == $val->status)
-                                                <option value="{{$val->status}}">{{$val->name}}
-                                            </option>
-                                            @endif
-                                            @endforeach
-                                            
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-7">
-                                    <div class="form-group">
-                                        <label class="control-label">Solution</label>
-                                        <input type="text"   class="form-control form-control-danger" name="solve" value="{{$helpdesk_activity->solve}}">
-                                        <small class="form-control-feedback"> Your solve </small>
-                                    </div>
-                                </div>
                             </div>
                             <!--/row-->
                             
                         </div>
-                        <!-- <div class="form-actions">
+                        <div class="form-actions">
                             <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Edit</button>
                              
-                        </div> -->
+                        </div>
                     </form>
                 </div>
             </div>
