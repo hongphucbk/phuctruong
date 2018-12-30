@@ -116,7 +116,7 @@
     <!-- Popup message jquery -->
     <script src="source/node_modules/toast-master/js/jquery.toast.js"></script>
     <!-- Chart JS -->
-    <script src="source/dist/js/dashboard1.js"></script>
+    <!-- <script src="source/dist/js/dashboard1.js"></script> -->
     <script src="source/node_modules/toast-master/js/jquery.toast.js"></script>
     <!-- This is data table -->
     <script src="source/node_modules/datatables/jquery.dataTables.min.js"></script>

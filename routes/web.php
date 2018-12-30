@@ -95,6 +95,34 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
 
             Route::get('delete/{id}','HelpdeskCategoryController@get_Delete_Admin');
         });
+
+        Route::group(['prefix' => 'course'], function() {
+            Route::group(['prefix' => 'category'], function() {
+                Route::get('/','Course\CategoryController@get_List');
+
+                Route::get('add','Course\CategoryController@get_Add');
+                Route::post('add','Course\CategoryController@post_Add');
+
+                Route::get('edit/{id}','Course\CategoryController@get_Edit');
+                Route::post('edit/{id}','Course\CategoryController@post_Edit');
+
+                Route::get('delete/{id}','Course\CategoryController@get_Delete');
+            });
+
+            Route::group(['prefix' => 'info'], function() {
+                Route::get('/','Course\Admin\InfoController@get_List');
+
+                Route::get('add','Course\Admin\InfoController@get_Add');
+                Route::post('add','Course\Admin\InfoController@post_Add');
+
+                Route::get('edit/{id}','Course\Admin\InfoController@get_Edit');
+                Route::post('edit/{id}','Course\Admin\InfoController@post_Edit');
+
+                Route::get('delete/{id}','Course\Admin\InfoController@get_Delete');
+            });
+            
+        });
+
     });
 
 });

@@ -52,6 +52,15 @@
                         <li><a href="app-contact-detail.html">Contact Detail</a></li>
                     </ul>
                 </li>
+
+                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-bars"></i><span class="hide-menu">Courses</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="admin/app/course/info">All Courses</a></li>
+                        <li><a href="admin/app/course/info/add">Add Course</a></li>
+                        <li><a href="admin/app/course/category">All Category</a></li>
+                    </ul>
+                </li>
+                        
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Inbox</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="app-email.html">Mailbox</a></li>

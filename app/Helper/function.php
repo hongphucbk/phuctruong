@@ -23,6 +23,11 @@ function get_Admin_All_User()
 	return count( App\User::all() );
 }
 
+function get_Admin_All_User_CountAdmin()
+{
+    return count( App\User::all() );
+}
+
 function get_Admin_All_UserGroup()
 {
 	return count( App\UserGroup::all() );
@@ -84,17 +89,17 @@ function get_Admin_Helpdesk_Ticket_Pending()
 
 function get_Member_Helpdesk_Ticket_Open($id)
 {
-	return count( App\HelpdeskActivity::where('id',$id)->where('status',10)->get() );
+	return count( App\HelpdeskActivity::where('raised_id',$id)->where('status',10)->get() );
 }
 
 function get_Member_Helpdesk_Ticket_Complete($id)
 {
-	return count( App\HelpdeskActivity::where('id',$id)->where('status',80)->get() );
+	return count( App\HelpdeskActivity::where('raised_id',$id)->where('status',80)->get() );
 }
 
 function get_Member_Helpdesk_Ticket_Pending($id)
 {
-	return count( App\HelpdeskActivity::where('id',$id)->where('status','>=',20)->where('status','<=',60)->get() );
+	return count( App\HelpdeskActivity::where('raised_id',$id)->where('status','>=',20)->where('status','<=',60)->get() );
 }
 
 ?>
