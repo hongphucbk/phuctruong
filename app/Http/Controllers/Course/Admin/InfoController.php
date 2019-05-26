@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\CourseInfo;
 use App\CourseCategory;
+use Illuminate\Support\Facades\Storage;
 
 class InfoController extends Controller
 {
@@ -41,6 +42,26 @@ class InfoController extends Controller
         $courseinfo->professor = $request->professor;
         $courseinfo->description = $request->description;
         $courseinfo->note = $request->note;
+        //Kiểm tra file
+        if ($request->hasFile('fileinput')) {
+            $file = $request->fileinput;
+
+            $fullName = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+
+            // $fullNameLenght = strlen($fullName);
+            // $extensionLenght = strlen($extension);
+            // $nameLength = $fullNameLenght - ($extensionLenght + 1);
+            // $onlyName = substr($fullName, 0, $nameLength);
+
+            // $fileNewName = $onlyName.'_'.date('YmdHis').'.'.$file->getClientOriginalExtension();
+
+            // $file->move('upload/maintenance/chungtu',$fileNewName);
+            // $chiphi->tenchungtu = $fileNewName;
+            $filename = $fullName;
+
+            Storage::cloud()->put($filename, $file);
+        }
 
         $courseinfo->save();
         return redirect()->back()->with('notification','Add successfully');

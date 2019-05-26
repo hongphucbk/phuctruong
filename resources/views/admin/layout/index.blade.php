@@ -112,6 +112,8 @@
     <!--morris JavaScript -->
     <script src="source/node_modules/raphael/raphael-min.js"></script>
     <script src="source/node_modules/morrisjs/morris.min.js"></script>
+    <!-- <script src="source/dist/js/pages/morris-data.js"></script>  -->
+
     <script src="source/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- Popup message jquery -->
     <script src="source/node_modules/toast-master/js/jquery.toast.js"></script>

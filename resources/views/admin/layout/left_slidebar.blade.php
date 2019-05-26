@@ -38,18 +38,19 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="admin/app/helpdesk">Support Ticket</a></li>
                         <li><a href="admin/app/category">Category</a></li>
-                        <li><a href="app-contact2.html">Contact Grid</a></li>
-                        <li><a href="app-contact-detail.html">Contact Detail</a></li>
+                         
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps</span></a>
+                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps Modbus TCP</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="app-calendar.html">Calendar</a></li>
-                        <li><a href="app-chat.html">Chat app</a></li>
-                        <li><a href="app-ticket.html">Support Ticket</a></li>
-                        <li><a href="app-contact.html">Contact / Employee</a></li>
+                        <li><a href="admin/app/modbustcp/device">Device</a></li>
+                        <li><a href="admin/app/modbustcp/parameter">Parameter</a></li>
+                        <li><a href="admin/app/modbustcp/value">Value</a></li>
+                        <li><a href="admin/app/modbustcp/chart">Chart</a></li>
+                        <li><a href="admin/app/modbustcp/chart">Export</a></li>
+                        <!-- <li><a href="app-contact.html">Contact / Employee</a></li>
                         <li><a href="app-contact2.html">Contact Grid</a></li>
-                        <li><a href="app-contact-detail.html">Contact Detail</a></li>
+                        <li><a href="app-contact-detail.html">Contact Detail</a></li> -->
                     </ul>
                 </li>
 

@@ -123,7 +123,53 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
             
         });
 
+        //Instrument Mobustcp
+        Route::group(['prefix' => 'modbustcp'], function() {
+            Route::group(['prefix' => 'device'], function() {
+                Route::get('/','InsModbustcpDeviceController@get_List_Admin');
+
+                Route::get('add','InsModbustcpDeviceController@get_Add_Admin');
+                Route::post('add','InsModbustcpDeviceController@post_Add_Admin');
+
+                //Route::get('edit/{id}','HelpdeskController@get_Edit_Admin');
+                //Route::post('edit/{id}','HelpdeskController@post_Edit_Admin');
+            });
+
+            Route::group(['prefix' => 'parameter'], function() {
+                Route::get('/','InsModbustcpParameterController@get_List_Admin');
+
+                Route::get('add','InsModbustcpParameterController@get_Add_Admin');
+                Route::post('add','InsModbustcpParameterController@post_Add_Admin');
+
+                Route::get('edit/{id}','InsModbustcpParameterController@get_Edit_Admin');
+                Route::post('edit/{id}','InsModbustcpParameterController@post_Edit_Admin');
+            });
+
+            Route::group(['prefix' => 'value'], function() {
+                Route::get('/','InsModbustcpValueController@get_List_Admin');
+
+               
+            });
+
+            Route::group(['prefix' => 'chart'], function() {
+                Route::get('/','InsModbustcpValueController@get_Chart_Admin');
+            });
+
+            Route::group(['prefix' => 'export'], function() {
+                Route::get('/','InsModbustcpValueController@get_Export_Admin');
+
+               
+            });
+
+            Route::group(['prefix' => 'realtime'], function() {
+                Route::get('/','InsModbustcpValueController@get_Realtime_Admin'); 
+                Route::post('/','InsModbustcpValueController@post_Realtime_Admin');   
+            });
+        });
+
     });
+
+    
 
 });
 
@@ -152,6 +198,8 @@ Route::get('ancom','EmailController@sendEmailAnCom');
 
 //Index Page
 Route::get('/','PhucTruongController@get_index' );
+Route::get('/index.html','PhucTruongController@get_index' );
+Route::get('/index.php','PhucTruongController@get_index' );
 
 //Login pages
 Route::get('signup','UserController@get_Signup');
@@ -188,3 +236,9 @@ Route::group(['prefix' => 'webserver'], function() {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('put', function() {
+    Storage::cloud()->put('test.txt', 'Hello World');
+    return 'File was saved to Google Drive';
+});
+
