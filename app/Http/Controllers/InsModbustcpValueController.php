@@ -11,6 +11,8 @@ use App\Charts\Modbuschart;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ModbustcpExport;
 
+use Carbon\Carbon;
+
 
 class InsModbustcpValueController extends Controller
 {
@@ -20,8 +22,6 @@ class InsModbustcpValueController extends Controller
 
 		return view('admin.apps.instrument.modbustcp.value.list', compact('values'));
 	}
-
-	
 
 	public function get_Chart_Admin()
 	{
@@ -37,7 +37,11 @@ class InsModbustcpValueController extends Controller
 		
 		
 		foreach ($paras as $key => $val) {
-			$values = InsModbustcpValue::where('parameter_id',$val->id)->get();
+			$values = InsModbustcpValue::where('parameter_id',$val->id)
+						->latest()
+						->take(50)
+						//->orderby('created_at','asc')
+						->get();
 			foreach ($values as $key => $value) {
 				$data1->push($key);	
 				$data2->push($value->value);
@@ -52,10 +56,31 @@ class InsModbustcpValueController extends Controller
 
 	public function get_Export_Admin()
 	{
+		$today = Carbon::now();
+		return view('admin.apps.instrument.modbustcp.export.exp', compact('today'));
 		//return Excel::download(new ModbustcpExport, 'Hihi.xlsx');
-		return (new ModbustcpExport(2019))->download('Hihi.xlsx');
+		//'return (new ModbustcpExport(2019))->download('Hihi.xlsx');
 
 	}
+
+	public function post_Export_Admin(Request $request)
+	{
+		$type = "xlsx";
+        $today = Carbon::now();
+        $ngay = $request->DateFind;
+        $ngay2 = $request->DateFind2;
+        $ngay =  Carbon::create(substr($ngay, 0, 4), substr($ngay, 5, 2), substr($ngay, 8, 2), 0, 0, 0);
+        $ngay2 = Carbon::create(substr($ngay2, 0, 4), substr($ngay2, 5, 2), substr($ngay2, 8, 2), 23, 59, 59);
+
+        $duoi1 = date('Ymd');
+        $duoi2 = date('His');
+
+
+		return (new ModbustcpExport($ngay,$ngay2 ))->download('Modbus TCP-'.$duoi1.'-'.$duoi2.'.xlsx');
+
+	}
+
+	
 
 	public function get_Realtime_Admin()
 	{

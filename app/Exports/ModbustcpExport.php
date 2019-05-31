@@ -26,6 +26,8 @@ class ModbustcpExport implements FromQuery, WithHeadings, WithMapping
     //         'values' => InsModbustcpValue::all()
     //     ]);
     // }
+    
+
 
     public function headings(): array
     {
@@ -52,13 +54,15 @@ class ModbustcpExport implements FromQuery, WithHeadings, WithMapping
         ];
     }
 
-	public function __construct(int $year)
+	public function __construct($ngay, $ngay2)
     {
-        $this->year = $year;
+        $this->ngay = $ngay;
+        $this->ngay2 = $ngay2;
     }
 
     public function query()
     {
-        return InsModbustcpValue::query()->where('created_at',null);
+        return InsModbustcpValue::query()->where('created_at','>=',$this->ngay)
+                                         ->where('created_at','<=',$this->ngay2);
     }
 }

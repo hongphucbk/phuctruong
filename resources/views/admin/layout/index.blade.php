@@ -20,7 +20,7 @@
     <!-- Custom CSS -->
     <link href="source/dist/css/style.min.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
-    <link href="source/dist/css/pages/dashboard1.css" rel="stylesheet">
+    <!-- <link href="source/dist/css/pages/dashboard1.css" rel="stylesheet"> -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,6 +94,8 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <script src="source/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="source/node_modules/popper/popper.min.js"></script>
@@ -112,7 +114,7 @@
     <!--morris JavaScript -->
     <script src="source/node_modules/raphael/raphael-min.js"></script>
     <script src="source/node_modules/morrisjs/morris.min.js"></script>
-    <!-- <script src="source/dist/js/pages/morris-data.js"></script>  -->
+    <script src="source/dist/js/pages/morris-data.js"></script> 
 
     <script src="source/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- Popup message jquery -->

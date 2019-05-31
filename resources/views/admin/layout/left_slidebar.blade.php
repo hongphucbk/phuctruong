@@ -47,7 +47,8 @@
                         <li><a href="admin/app/modbustcp/parameter">Parameter</a></li>
                         <li><a href="admin/app/modbustcp/value">Value</a></li>
                         <li><a href="admin/app/modbustcp/chart">Chart</a></li>
-                        <li><a href="admin/app/modbustcp/chart">Export</a></li>
+                        <li><a href="admin/app/modbustcp/export">Export</a></li>
+                        <li><a href="admin/app/modbustcp/realtime">Realtime</a></li>
                         <!-- <li><a href="app-contact.html">Contact / Employee</a></li>
                         <li><a href="app-contact2.html">Contact Grid</a></li>
                         <li><a href="app-contact-detail.html">Contact Detail</a></li> -->
@@ -79,22 +80,7 @@
                         <li><a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a></li>
                         <li><a href="ui-tooltip-stylish.html">Tooltip stylish</a></li>
                         <li><a href="ui-sweetalert.html">Sweet Alert</a></li>
-                        <li><a href="ui-notification.html">Notification</a></li>
-                        <li><a href="ui-progressbar.html">Progressbar</a></li>
-                        <li><a href="ui-nestable.html">Nestable</a></li>
-                        <li><a href="ui-range-slider.html">Range slider</a></li>
-                        <li><a href="ui-timeline.html">Timeline</a></li>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-horizontal-timeline.html">Horizontal Timeline</a></li>
-                        <li><a href="ui-session-timeout.html">Session Timeout</a></li>
-                        <li><a href="ui-session-ideal-timeout.html">Session Ideal Timeout</a></li>
-                        <li><a href="ui-bootstrap.html">Bootstrap Ui</a></li>
-                        <li><a href="ui-breadcrumb.html">Breadcrumb</a></li>
-                        <li><a href="ui-bootstrap-switch.html">Bootstrap Switch</a></li>
-                        <li><a href="ui-list-media.html">List Media</a></li>
-                        <li><a href="ui-ribbons.html">Ribbons</a></li>
-                        <li><a href="ui-grid.html">Grid</a></li>
-                        <li><a href="ui-carousel.html">Carousel</a></li>
+                       
                         <li><a href="ui-date-paginator.html">Date-paginator</a></li>
                         <li><a href="ui-dragable-portlet.html">Dragable Portlet</a></li>
                     </ul>
@@ -104,19 +90,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="form-basic.html">Basic Forms</a></li>
                         <li><a href="form-layout.html">Form Layouts</a></li>
-                        <li><a href="form-addons.html">Form Addons</a></li>
-                        <li><a href="form-material.html">Form Material</a></li>
-                        <li><a href="form-float-input.html">Floating Lable</a></li>
-                        <li><a href="form-pickers.html">Form Pickers</a></li>
-                        <li><a href="form-upload.html">File Upload</a></li>
-                        <li><a href="form-mask.html">Form Mask</a></li>
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="form-dropzone.html">File Dropzone</a></li>
-                        <li><a href="form-icheck.html">Icheck control</a></li>
-                        <li><a href="form-img-cropper.html">Image Cropper</a></li>
-                        <li><a href="form-bootstrapwysihtml5.html">HTML5 Editor</a></li>
-                        <li><a href="form-typehead.html">Form Typehead</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
+                        
                         <li><a href="form-xeditable.html">Xeditable Editor</a></li>
                         <li><a href="form-summernote.html">Summernote Editor</a></li>
                         <li><a href="form-tinymce.html">Tinymce Editor</a></li>
@@ -149,10 +123,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="pages-login.html">Login 1</a></li>
                                 <li><a href="pages-login-2.html">Login 2</a></li>
-                                <li><a href="pages-register.html">Register</a></li>
-                                <li><a href="pages-register2.html">Register 2</a></li>
-                                <li><a href="pages-register3.html">Register 3</a></li>
-                                <li><a href="pages-lockscreen.html">Lockscreen</a></li>
+                                
                                 <li><a href="pages-recover-password.html">Recover password</a></li>
                             </ul>
                         </li>
@@ -183,14 +154,7 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-pie-chart"></i><span class="hide-menu">Charts</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="chart-morris.html">Morris Chart</a></li>
-                        <li><a href="chart-chartist.html">Chartis Chart</a></li>
-                        <li><a href="chart-echart.html">Echarts</a></li>
-                        <li><a href="chart-flot.html">Flot Chart</a></li>
-                        <li><a href="chart-knob.html">Knob Chart</a></li>
-                        <li><a href="chart-chart-js.html">Chartjs</a></li>
-                        <li><a href="chart-sparkline.html">Sparkline Chart</a></li>
-                        <li><a href="chart-extra-chart.html">Extra chart</a></li>
-                        <li><a href="chart-peity.html">Peity Charts</a></li>
+                        
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-light-bulb"></i><span class="hide-menu">Icons</span></a>
@@ -206,7 +170,6 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-location-pin"></i><span class="hide-menu">Maps</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="map-google.html">Google Maps</a></li>
-                        <li><a href="map-vector.html">Vector Maps</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-align-left"></i><span class="hide-menu">Multi level dd</span></a>
@@ -217,8 +180,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="javascript:void(0)">item 1.3.1</a></li>
                                 <li><a href="javascript:void(0)">item 1.3.2</a></li>
-                                <li><a href="javascript:void(0)">item 1.3.3</a></li>
-                                <li><a href="javascript:void(0)">item 1.3.4</a></li>
+                                
                             </ul>
                         </li>
                         <li><a href="javascript:void(0)">item 1.4</a></li>

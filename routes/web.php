@@ -157,7 +157,7 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
 
             Route::group(['prefix' => 'export'], function() {
                 Route::get('/','InsModbustcpValueController@get_Export_Admin');
-
+                Route::post('/','InsModbustcpValueController@post_Export_Admin');
                
             });
 

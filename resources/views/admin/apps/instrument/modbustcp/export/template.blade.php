@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hihi</title>
+	<title>MODBUS</title>
 </head>
 <body>
 	<table>
