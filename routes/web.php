@@ -192,6 +192,53 @@ Route::group(['prefix' => 'member'], function() {
 
 });
 
+Route::group(['prefix' => 'scada'], function() {
+    //Instrument Mobustcp
+    Route::group(['prefix' => 'modbustcp'], function() {
+        // Route::group(['prefix' => 'device'], function() {
+        //     Route::get('/','InsModbustcpDeviceController@get_List_Admin');
+
+        //     Route::get('add','InsModbustcpDeviceController@get_Add_Admin');
+        //     Route::post('add','InsModbustcpDeviceController@post_Add_Admin');
+
+        //     //Route::get('edit/{id}','HelpdeskController@get_Edit_Admin');
+        //     //Route::post('edit/{id}','HelpdeskController@post_Edit_Admin');
+        // });
+
+        // Route::group(['prefix' => 'parameter'], function() {
+        //     Route::get('/','InsModbustcpParameterController@get_List_Admin');
+
+        //     Route::get('add','InsModbustcpParameterController@get_Add_Admin');
+        //     Route::post('add','InsModbustcpParameterController@post_Add_Admin');
+
+        //     Route::get('edit/{id}','InsModbustcpParameterController@get_Edit_Admin');
+        //     Route::post('edit/{id}','InsModbustcpParameterController@post_Edit_Admin');
+        // });
+
+        Route::group(['prefix' => 'value'], function() {
+            Route::get('/','InsModbustcpValueController@get_List');
+
+           
+        });
+
+        Route::group(['prefix' => 'chart'], function() {
+            Route::get('/','InsModbustcpValueController@get_Chart');
+            Route::get('/2','InsModbustcpValueController@get_Chart_2_Highchart');
+        });
+
+        Route::group(['prefix' => 'export'], function() {
+            Route::get('/','InsModbustcpValueController@get_Export');
+            Route::post('/','InsModbustcpValueController@post_Export');
+           
+        });
+
+        Route::group(['prefix' => 'realtime'], function() {
+            Route::get('/','InsModbustcpRealtime@get_Realtime'); 
+            Route::post('/','InsModbustcpRealtime@post_Realtime');   
+        });
+    });
+});
+
 //Send mail
 Route::get('send_email','EmailController@sendEmailReminder');
 Route::get('ancom','EmailController@sendEmailAnCom');

@@ -14,7 +14,7 @@
 		============================================= -->
 		<nav id="primary-menu">
 
-			<ul>
+			<!-- <ul>
 				<li class="current"><a href="index.html"><div>Home</div></a>
 					<ul>
 						<li><a href="index-corporate.html"><div>Home - Corporate</div></a>
@@ -572,7 +572,7 @@
 						</ul>
 					</div>
 				</li>
-			</ul>
+			</ul> -->
 
 			<!-- <div> Phuc Truong Hong </div> -->
 
@@ -584,6 +584,7 @@
 				    <span class="caret"></span></span>
 				    <ul class="dropdown-menu" style="background-color: none">
 				      <li><a class="phuc-login" href="member/app/helpdesk">My page</a></li>
+				      <li><a class="phuc-login" href="scada/modbustcp/value">Instrument</a></li>
 				      <li><a class="phuc-login" href="logout">Logout</a></li>
 				    </ul>
 				@else

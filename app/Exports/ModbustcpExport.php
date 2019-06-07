@@ -32,24 +32,32 @@ class ModbustcpExport implements FromQuery, WithHeadings, WithMapping
     public function headings(): array
     {
         return [
-            '#',
+            'NO.',
             'Device Name',
             'Parameter Name',
             'Value',
             'Display',
             'Note',
+            'Time',
         ];
     }
 
     public function map($data): array
     {
+        if($data->display) {
+            $display = "Y";
+        }else{
+           $display =  "N";
+        }
+
         return [
             $data->id,
             $data->ins_modbustcp_parameter->ins_modbustcp_device->name,
             $data->ins_modbustcp_parameter->name,
             $data->value,
-            $data->display,
+            $display  ,
             $data->note,
+            $data->created_at,
             //Date::dateTimeToExcel($invoice->created_at),
         ];
     }
