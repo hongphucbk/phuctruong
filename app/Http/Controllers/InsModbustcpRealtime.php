@@ -16,7 +16,12 @@ class InsModbustcpRealtime extends Controller
 {
     public function get_Realtime()
 	{
-		return view('scada.modbustcp.realtime.realtime');
+		// $devices = InsModbustcpDevice::all();
+		// foreach ($devices as $key1 => $device) {
+		// 	$parameters = InsModbustcpParameter::where('device_id', $device->id)->get();
+		// }
+		$parameters = InsModbustcpParameter::all();
+		return view('scada.modbustcp.realtime.realtime', compact('parameters'));
 	}
 
 	public function post_Realtime()
