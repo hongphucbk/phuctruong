@@ -30,7 +30,7 @@ function A_emit() {
 			'value': randomInt(100,200),
 			'time': timeValue
 		}
-		io.emit('modbus', data);
+		io.emit('modbus', data);  
 	}
 };
 
