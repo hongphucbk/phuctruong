@@ -40,4 +40,29 @@ class InsModbustcpDeviceController extends Controller
 		return redirect()->back()->with('notification','Add successfully');
 	}
     
+    public function get_Edit_Admin($id)
+	{
+		$device = InsModbustcpDevice::find($id);
+		return view('admin.apps.instrument.modbustcp.device.edit',compact('device'));
+	}
+
+	public function post_Edit_Admin($id, Request $request)
+	{
+		$this->validate($request,[
+            'name' => 'required',
+            'IPaddress' => 'required',
+        ],
+        [
+            'name.required'=>'Please input name',
+            'IPaddress.required'=>'Please input IP address',
+        ]);
+
+		$device = InsModbustcpDevice::find($id);
+		$device->name = $request->name;
+		$device->IPaddress = $request->IPaddress;
+		$device->note = $request->note;
+
+		$device->save();
+		return redirect()->back()->with('notification','Add successfully');
+	}
 }

@@ -131,8 +131,8 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
                 Route::get('add','InsModbustcpDeviceController@get_Add_Admin');
                 Route::post('add','InsModbustcpDeviceController@post_Add_Admin');
 
-                //Route::get('edit/{id}','HelpdeskController@get_Edit_Admin');
-                //Route::post('edit/{id}','HelpdeskController@post_Edit_Admin');
+                Route::get('edit/{id}','InsModbustcpDeviceController@get_Edit_Admin');
+                Route::post('edit/{id}','InsModbustcpDeviceController@post_Edit_Admin');
             });
 
             Route::group(['prefix' => 'parameter'], function() {
