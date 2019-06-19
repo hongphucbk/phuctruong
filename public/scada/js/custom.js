@@ -42,9 +42,9 @@ $(function() {
 
     // topbar stickey on scroll
 
-    $(".fix-header .topbar").stick_in_parent({
+    // $(".fix-header .topbar").stick_in_parent({
 
-    });
+    // });
 
     // this is for close icon when navigation open in mobile view
     $(".nav-toggler").click(function() {

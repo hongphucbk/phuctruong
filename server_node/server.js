@@ -27,7 +27,7 @@ function A_emit() {
 	for (var i = 1; i <= 3; i++) {
 		data = {
 			'id' :i,
-			'value': randomInt(100,200),
+			'value': randomInt(60,70),
 			'time': timeValue
 		}
 		io.emit('modbus', data);  

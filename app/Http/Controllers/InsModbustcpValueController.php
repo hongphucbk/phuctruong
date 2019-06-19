@@ -94,8 +94,7 @@ class InsModbustcpValueController extends Controller
 	//------------------------
 	public function get_List()
 	{
-		$values = InsModbustcpValue::all();
-
+		$values = InsModbustcpValue::latest()->take(1000)->get();
 		return view('scada.modbustcp.value', compact('values'));
 	}
 

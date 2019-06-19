@@ -94,20 +94,20 @@
     <!--Menu sidebar -->
     <script src="scada/js/sidebarmenu.js"></script>
     <!--stickey kit -->
-    <script src="scada/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!-- <script src="scada/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script> -->
     <!--Custom JavaScript -->
-    <script src="scada/js/custom.min.js"></script>
+        <script src="scada/js/custom.min.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
     <!-- Flot Charts JavaScript -->
-    <script src="scada/assets/plugins/flot/jquery.flot.js"></script>
-    <script src="scada/assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="scada/js/flot-data.js"></script>
+    <!-- <script src="scada/assets/plugins/flot/jquery.flot.js"></script> -->
+    <!-- <script src="scada/assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script> -->
+        <!-- <script src="scada/js/flot-data.js"></script> -->
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="scada/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <!-- <script src="scada/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script> -->
     @yield('script')
 </body>
 

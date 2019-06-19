@@ -234,7 +234,13 @@ Route::group(['prefix' => 'scada'], function() {
 
         Route::group(['prefix' => 'realtime'], function() {
             Route::get('/','InsModbustcpRealtime@get_Realtime'); 
-            Route::post('/','InsModbustcpRealtime@post_Realtime');   
+            Route::post('/','InsModbustcpRealtime@post_Realtime'); 
+              
+        });
+
+        Route::group(['prefix' => 'dashboard'], function() {
+            //Dashboard
+            Route::get('/','InsModbustcpRealtime@get_Dashboard_Realtime');    
         });
     });
 });

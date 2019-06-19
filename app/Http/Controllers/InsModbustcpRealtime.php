@@ -30,4 +30,13 @@ class InsModbustcpRealtime extends Controller
 		return response()->json(array('msg'=> $value), 200);
 
 	}
+
+	public function get_Dashboard_Realtime()
+	{
+		
+		$parameters = InsModbustcpParameter::all();
+		return view('scada.modbustcp.dashboard.dashboard1', compact('parameters'));
+	}
+
+	
 }
