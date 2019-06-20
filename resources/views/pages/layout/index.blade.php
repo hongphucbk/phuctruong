@@ -47,9 +47,9 @@
 				<div class="container clearfix">
 					<div class="slider-caption slider-caption-center">
 						<h2 data-animate="fadeInUp">Phuc Truong</h2>
-						<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="200">Hello, Welcome to my web &amp; Have nice day.</p>
-						<a data-animate="fadeInUp" data-delay="400" href="#" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin d-none d-md-inline-block" style="margin-top: 30px;">Start</a>
-						<a data-animate="fadeInUp" data-delay="600" href="#" class="button button-3d button-teal button-large nobottommargin d-none d-md-inline-block" style="margin: 30px 0 0 10px;">Buy Now</a>
+						<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="50">Hello, Welcome to my web &amp; Have nice day.</p>
+						<a data-animate="fadeInUp" data-delay="400" href="#" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin d-none d-md-inline-block" style="margin-top: 30px;">PLC</a>
+						<a data-animate="fadeInUp" data-delay="200" href="#" class="button button-3d button-teal button-large nobottommargin d-none d-md-inline-block" style="margin: 30px 0 0 10px;">INSTRUMENT</a>
 					</div>
 				</div>
 				<div class="video-wrap">

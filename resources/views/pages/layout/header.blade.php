@@ -595,7 +595,7 @@
 
 			<!-- Top Cart
 			============================================= -->
-			<div id="top-cart">
+			<!-- <div id="top-cart">
 				<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
 				<div class="top-cart-content">
 					<div class="top-cart-title">
@@ -628,14 +628,14 @@
 						<button class="button button-3d button-small nomargin fright">View Cart</button>
 					</div>
 				</div>
-			</div><!-- #top-cart end -->
+			</div> --><!-- #top-cart end -->
 
 			<!-- Top Search
 			============================================= -->
 			<div id="top-search">
 				<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
 				<form action="search.html" method="get">
-					<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+					<input type="text" name="q" class="form-control" value="" placeholder="Hello, How are you today ..">
 				</form>
 			</div><!-- #top-search end -->
 
