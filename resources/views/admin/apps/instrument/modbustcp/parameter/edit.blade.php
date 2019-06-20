@@ -66,17 +66,30 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Parameter Name</label>
                                         <input type="text" class="form-control" name="name" placeholder="Parameter name ..." value="{{ $parameter->name }}">
                                         <small class="form-control-feedback"> This is parameter name </small> </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Register</label>
                                         <input type="text" class="form-control" name="register" placeholder="Register ..." value="{{ $parameter->register }}">
                                         <small class="form-control-feedback"> This is register </small> </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Scale Value</label>
+                                        <input type="text" class="form-control" name="scalevalue" placeholder="Ex: 1, 0.1, 10 ..." value="{{ $parameter->scalevalue }}">
+                                        <small class="form-control-feedback"> This is scalevalue </small> </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Slave Id</label>
+                                        <input type="text" class="form-control" name="slaveid" placeholder="Default 1" value="{{ $parameter->slaveid }}">
+                                        <small class="form-control-feedback"> This is slave id </small> 
+                                    </div>
                                 </div>
                                 <div class="col-md-3" >
                                     <label class="col-sm-12">Display</label>

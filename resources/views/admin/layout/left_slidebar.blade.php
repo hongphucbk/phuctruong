@@ -8,21 +8,21 @@
                 <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="source/images/users/1.jpg" alt="user-img" class="img-circle"><span class="" style="color: green">{{ Auth::user()->name }}</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
-                        <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
+                        <!-- <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
                         <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
-                        <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+                        <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li> -->
                         <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </li>
                 @endif
                 <li class="nav-small-cap">--- PERSONAL</li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
-                    <ul aria-expanded="false" class="collapse">
+                    <!-- <ul aria-expanded="false" class="collapse">
                         <li><a href="index.html">Minimal </a></li>
                         <li><a href="index2.html">Analytical</a></li>
                         <li><a href="index3.html">Demographical</a></li>
                         <li><a href="index4.html">Modern</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
 
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-accordion-merged"></i><span class="hide-menu">USER</span></a>
@@ -63,14 +63,14 @@
                     </ul>
                 </li>
                         
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Inbox</span></a>
+                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Inbox</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="app-email.html">Mailbox</a></li>
                         <li><a href="app-email-detail.html">Mailbox Detail</a></li>
                         <li><a href="app-compose.html">Compose Mail</a></li>
                     </ul>
-                </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-palette"></i><span class="hide-menu">Ui Elements <span class="badge badge-pill badge-primary text-white ml-auto">25</span></span></a>
+                </li> -->
+                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-palette"></i><span class="hide-menu">Ui Elements <span class="badge badge-pill badge-primary text-white ml-auto">25</span></span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="ui-cards.html">Cards</a></li>
                         <li><a href="ui-user-card.html">User Cards</a></li>
@@ -84,8 +84,8 @@
                         <li><a href="ui-date-paginator.html">Date-paginator</a></li>
                         <li><a href="ui-dragable-portlet.html">Dragable Portlet</a></li>
                     </ul>
-                </li>
-                <li class="nav-small-cap">--- FORMS, TABLE &amp; WIDGETS</li>
+                </li> -->
+                <!-- <li class="nav-small-cap">--- FORMS, TABLE &amp; WIDGETS</li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-media-right-alt"></i><span class="hide-menu">Forms</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="form-basic.html">Basic Forms</a></li>
@@ -95,9 +95,9 @@
                         <li><a href="form-summernote.html">Summernote Editor</a></li>
                         <li><a href="form-tinymce.html">Tinymce Editor</a></li>
                     </ul>
-                </li>
+                </li> -->
                 
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-settings"></i><span class="hide-menu">Widgets</span></a>
+                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-settings"></i><span class="hide-menu">Widgets</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="widget-data.html">Data Widgets</a></li>
                         <li><a href="widget-apps.html">Apps Widgets</a></li>
@@ -114,8 +114,8 @@
                         <li><a href="layout-boxed.html">Boxed Layout</a></li>
                         <li><a href="layout-logo-center.html">Logo in Center</a></li>
                     </ul>
-                </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i><span class="hide-menu">Sample Pages <span class="badge badge-pill badge-info">25</span></span></a>
+                </li> -->
+               <!--  <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-files"></i><span class="hide-menu">Sample Pages <span class="badge badge-pill badge-info">25</span></span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="starter-kit.html">Starter Kit</a></li>
                         <li><a href="pages-blank.html">Blank page</a></li>
@@ -171,8 +171,8 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="map-google.html">Google Maps</a></li>
                     </ul>
-                </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-align-left"></i><span class="hide-menu">Multi level dd</span></a>
+                </li> -->
+                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-align-left"></i><span class="hide-menu">Multi level dd</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="javascript:void(0)">item 1.1</a></li>
                         <li><a href="javascript:void(0)">item 1.2</a></li>
@@ -189,7 +189,7 @@
                 <li class="nav-small-cap">--- SUPPORT</li>
                 <li> <a class="waves-effect waves-dark" href="source/documentation/documentation.html" aria-expanded="false"><i class="fa fa-circle-o text-danger"></i><span class="hide-menu">Documentation</span></a></li>
                 <li> <a class="waves-effect waves-dark" href="pages-login.html" aria-expanded="false"><i class="fa fa-circle-o text-success"></i><span class="hide-menu">Log Out</span></a></li>
-                <li> <a class="waves-effect waves-dark" href="pages-faq.html" aria-expanded="false"><i class="fa fa-circle-o text-info"></i><span class="hide-menu">FAQs</span></a></li>
+                <li> <a class="waves-effect waves-dark" href="pages-faq.html" aria-expanded="false"><i class="fa fa-circle-o text-info"></i><span class="hide-menu">FAQs</span></a></li> -->
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

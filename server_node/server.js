@@ -8,13 +8,21 @@ io.on('error', function(socket) {
 io.on('connection', function(socket) {
 	console.log('Co nguoi vua ket noi id = ' + socket.id);
 
-	socket.on('modbustcp', function(msg){
+	socket.on('modbustcp1', function(msg){
 	    console.log('modbustcp: ' + msg);
 	});
 
-	setInterval(A_emit, 1 * 1000);
+	socket.on('modbustcp', function(msg){
+		var obj = JSON.parse(msg);
+	    console.log(obj.device_id + "--" + obj.ipaddress + "--" + obj.parameter_id + "--"  + obj.value + "--" + obj.created_at );
+	    data = {
+			'id' :obj.parameter_id,
+			'value': obj.value,
+			'time': obj.created_at
+		}
+		io.emit('modbus', data); 
+	});
 		
-
 	socket.on('disconnect', function(){
 	    console.log('Disconect '+ socket.id + ' disconnected');
 	});
@@ -39,18 +47,18 @@ function randomInt(low, high) {
 }
 
 
-var Redis = require('ioredis')
-var redis = new Redis(1000)
-redis.psubscribe("*", function(error, count) {
-	// body...
-})
+// var Redis = require('ioredis')
+// var redis = new Redis(1000)
+// redis.psubscribe("*", function(error, count) {
+// 	// body...
+// })
 
-redis.on('pmessage',function(partner, channel, message) {
-	// console.log(channel);
-	// console.log(message);
-	// console.log(partner);
+// redis.on('pmessage',function(partner, channel, message) {
+// 	// console.log(channel);
+// 	// console.log(message);
+// 	// console.log(partner);
 	
-	message = JSON.parse(message)
-	io.emit(channel+":"+message.event, message.data.message);
-	console.log('Sent');
-})
+// 	message = JSON.parse(message)
+// 	io.emit(channel+":"+message.event, message.data.message);
+// 	console.log('Sent');
+// })

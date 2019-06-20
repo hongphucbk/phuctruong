@@ -37,12 +37,12 @@
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
             <p class="loader__label">Phuc Truong</p>
         </div>
-    </div>
+    </div> -->
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -121,7 +121,6 @@
     <script src="source/node_modules/toast-master/js/jquery.toast.js"></script>
     <!-- Chart JS -->
     <script src="source/dist/js/dashboard1.js"></script>
-    <script src="source/node_modules/toast-master/js/jquery.toast.js"></script>
     <!-- This is data table -->
     <script src="source/node_modules/datatables/jquery.dataTables.min.js"></script>
     @yield('script')

@@ -27,7 +27,7 @@
     <!-- Info box -->
     <!-- ============================================================== -->
     <div class="card-group">
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -48,10 +48,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Column -->
         <!-- Column -->
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -72,10 +72,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Column -->
         <!-- Column -->
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -96,10 +96,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Column -->
         <!-- Column -->
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -120,7 +120,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- ============================================================== -->
     <!-- End Info box -->
@@ -153,8 +153,9 @@
 	                                <th>#</th>
                                     <th>Device</th>
 	                                <th>Name</th>
+                                    <th>Slave ID</th>
                                     <th>Register</th>
-                                    
+                                    <th>Scale</th>
                                     <th>Display</th>
 	                                <th>Note</th>
 
@@ -168,8 +169,9 @@
 	                                <td>{{ $val->id }}</td>
                                     <td>{{ $val->ins_modbustcp_device->name }}</td>
                                     <td>{{ $val->name }}</td>
+                                    <td>{{ $val->slaveid }}</td>
                                     <td>{{ $val->register }}</td>
-
+                                    <td>{{ $val->scalevalue }}</td>
 	                                <td>{{ $val->display }}</td>
 	                                <td>{{ $val->note }}</td>
 

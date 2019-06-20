@@ -38,6 +38,8 @@ class InsModbustcpParameterController extends Controller
 		$parameter = new InsModbustcpParameter;
 		$parameter->name = $request->name;
 		$parameter->register = $request->register;
+		$parameter->scalevalue = $request->scalevalue;
+		$parameter->slaveid = $request->slaveid;
 		$parameter->device_id = $request->device_id;
 		$parameter->note = $request->note;
 
@@ -71,7 +73,9 @@ class InsModbustcpParameterController extends Controller
 		$parameter->device_id = $request->device_id;
 		$parameter->display = $request->display;
 		$parameter->note = $request->note;
-
+		$parameter->scalevalue = $request->scalevalue;
+		$parameter->slaveid = $request->slaveid;
+		
 		$parameter->save();
 		return redirect()->back()->with('notification','Edit successfully');
 	}

@@ -27,6 +27,8 @@ class CreateInsTable extends Migration
             $table->unsignedInteger('device_id');
             $table->string('name');
             $table->string('register');
+            $table->integer('slaveid')->default(1);
+            $table->double('scalevalue')->default(1);
             $table->integer('display')->default(1);   
             $table->string('note')->nullable();            
             $table->timestamps();
