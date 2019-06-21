@@ -26,18 +26,26 @@ io.on('connection', function(socket) {
 	socket.on('disconnect', function(){
 	    console.log('Disconect '+ socket.id + ' disconnected');
 	});
+
+	setInterval(function () {
+		A_emit();
+	}, 10000);
+	
 })
+
+
 
 function A_emit() {
 
 	var today = new Date();
 	var timeValue = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear() + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	for (var i = 1; i <= 3; i++) {
+	for (var i = 1; i <= 4; i++) {
 		data = {
 			'id' :i,
 			'value': randomInt(60,70),
 			'time': timeValue
 		}
+		console.log(data);
 		io.emit('modbus', data);  
 	}
 };

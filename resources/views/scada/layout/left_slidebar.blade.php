@@ -14,7 +14,7 @@
                             <a href="scada/modbustcp/value" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Row Data</a>
                         </li>
                         <li>
-                            <a href="scada/modbustcp/chart" class="waves-effect"><i class="fa fa-bar-chart-o m-r-10" aria-hidden="true"></i>Chart</a>
+                            <a href="scada/modbustcp/chart/rt" class="waves-effect"><i class="fa fa-bar-chart-o m-r-10" aria-hidden="true"></i>Chart</a>
                         </li>
                         <li>
                             <a href="scada/modbustcp/export" class="waves-effect"><i class="fa fa-file-excel-o m-r-10" aria-hidden="true"></i>Export</a>

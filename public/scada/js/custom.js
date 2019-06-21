@@ -76,18 +76,18 @@ $(function() {
     // ============================================================== 
     // Sidebarmenu
     // ============================================================== 
-    $(function() {
-        $('#sidebarnav').metisMenu();
-    });
+        // $(function() {
+        //     $('#sidebarnav').metisMenu();
+        // });
     // ============================================================== 
     // Slimscrollbars
     // ============================================================== 
-    $('.scroll-sidebar').slimScroll({
-        position: 'left',
-        size: "5px",
-        height: '100%',
-        color: '#dcdcdc'
-    });
+        // $('.scroll-sidebar').slimScroll({
+        //     position: 'left',
+        //     size: "5px",
+        //     height: '100%',
+        //     color: '#dcdcdc'
+        // });
 
     // ============================================================== 
     // Resize all elements

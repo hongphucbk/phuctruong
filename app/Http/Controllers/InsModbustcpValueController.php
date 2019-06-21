@@ -94,7 +94,7 @@ class InsModbustcpValueController extends Controller
 	//------------------------
 	public function get_List()
 	{
-		$values = InsModbustcpValue::latest()->take(1000)->get();
+		$values = InsModbustcpValue::latest()->take(500)->get();
 		return view('scada.modbustcp.value', compact('values'));
 	}
 
@@ -186,5 +186,11 @@ class InsModbustcpValueController extends Controller
 		return (new ModbustcpExport($ngay,$ngay2 ))->download('Modbus TCP-'.$duoi1.'-'.$duoi2.'.xlsx');
 
 	}
+
+	public function get_Chart_Rt()
+	{
+		return view('scada.modbustcp.chart.chartRealtime');
+	}
+
 
 }

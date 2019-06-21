@@ -31,10 +31,10 @@
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-    </div>
+    </div> -->
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -88,7 +88,7 @@
     <script src="scada/assets/plugins/bootstrap/js/tether.min.js"></script>
     <script src="scada/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="scada/js/jquery.slimscroll.js"></script>
+        <!-- <script src="scada/js/jquery.slimscroll.js"></script> -->
     <!--Wave Effects -->
     <script src="scada/js/waves.js"></script>
     <!--Menu sidebar -->
@@ -96,7 +96,7 @@
     <!--stickey kit -->
     <!-- <script src="scada/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script> -->
     <!--Custom JavaScript -->
-        <script src="scada/js/custom.min.js"></script>
+        <script src="scada/js/custom.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->

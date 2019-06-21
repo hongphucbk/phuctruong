@@ -224,6 +224,7 @@ Route::group(['prefix' => 'scada'], function() {
         Route::group(['prefix' => 'chart'], function() {
             Route::get('/','InsModbustcpValueController@get_Chart');
             Route::get('/2','InsModbustcpValueController@get_Chart_2_Highchart');
+            Route::get('/rt','InsModbustcpValueController@get_Chart_Rt');
         });
 
         Route::group(['prefix' => 'export'], function() {
@@ -240,7 +241,8 @@ Route::group(['prefix' => 'scada'], function() {
 
         Route::group(['prefix' => 'dashboard'], function() {
             //Dashboard
-            Route::get('/','InsModbustcpRealtime@get_Dashboard_Realtime');    
+            Route::get('/','InsModbustcpRealtime@get_Dashboard_Realtime');
+            Route::get('/2','InsModbustcpRealtime@get_Dashboard_Realtime_2');    
         });
     });
 });
