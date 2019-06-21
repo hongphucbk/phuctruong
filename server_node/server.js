@@ -27,9 +27,9 @@ io.on('connection', function(socket) {
 	    console.log('Disconect '+ socket.id + ' disconnected');
 	});
 
-	setInterval(function () {
-		A_emit();
-	}, 10000);
+	// setInterval(function () {
+	// 	A_emit();
+	// }, 10000);
 	
 })
 

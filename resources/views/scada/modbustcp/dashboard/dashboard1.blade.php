@@ -95,7 +95,7 @@
                 //$('.cValue').text(data);
                 $('#iValue'+ data.id).text(data.value);
                 $('#iTime'+ data.id).text(data.time);
-                if (data.id == 3s) {
+                if (data.id == 3) {
                 	gauge1.update(data.value);
                 }
                 
