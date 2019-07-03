@@ -21,6 +21,9 @@ io.on('connection', function(socket) {
 			'slave': 1,
 			'address': '40001'
 		}
+		data = "127.0.0.1, 1, 40001, 125";
+			
+			
 		io.emit('webwrite', data); 
 	});
 
