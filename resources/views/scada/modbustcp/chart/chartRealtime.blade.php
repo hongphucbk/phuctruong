@@ -47,10 +47,9 @@
         
         <div class="col-sm-12">
             <div class="card">
-               
-               <div id="chart">
-                          <apexchart ref="realtimeChart" type=line height=500 :options="chartOptions" :series="series" />
-                        </div>
+                <div id="chart">
+                  <apexchart ref="realtimeChart" type=line height=500 :options="chartOptions" :series="series" />
+                </div>
             </div>
         </div>
     </div>
@@ -79,8 +78,6 @@
                 //gauge1.update(data.value);
                 yvalue = data.value;
             }
-            
-
         })
     </script>
 @endsection

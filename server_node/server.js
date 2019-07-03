@@ -12,6 +12,18 @@ io.on('connection', function(socket) {
 	    console.log('modbustcp: ' + msg);
 	});
 
+	//
+	socket.on('webwritestart', function(msg){
+	    console.log('Đã kết nối: ' + msg);
+
+	    data = {
+			'ipaddress' : '127.0.0.1',
+			'slave': 1,
+			'address': '40001'
+		}
+		io.emit('webwrite', data); 
+	});
+
 	socket.on('modbustcp', function(msg){
 		var obj = JSON.parse(msg);
 	    console.log(obj.device_id + "--" + obj.ipaddress + "--" + obj.parameter_id + "--"  + obj.value + "--" + obj.created_at );

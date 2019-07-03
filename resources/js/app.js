@@ -16,6 +16,13 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('my-component', require('./components/MyComponent.vue'));
+Vue.component('conditional-rendering', require('./components/ConditionalRendering.vue'));
+Vue.component('list-rendering', require('./components/ListRendering.vue'));
+
+Vue.component('user-dashboard', require('./components/UserDashboard.vue'));
+
+
 
 const app = new Vue({
     el: '#app'

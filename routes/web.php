@@ -297,3 +297,9 @@ Route::get('put', function() {
     return 'File was saved to Google Drive';
 });
 
+//Test Vue
+Route::get('/vue', function () {
+    return view('welcome2');
+    //return view('admin.user.list');
+});
+

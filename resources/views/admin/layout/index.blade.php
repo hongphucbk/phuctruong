@@ -118,7 +118,7 @@
 
     <script src="source/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- Popup message jquery -->
-    <script src="source/node_modules/toast-master/js/jquery.toast.js"></script>
+    <!-- <script src="source/node_modules/toast-master/js/jquery.toast.js"></script> -->
     <!-- Chart JS -->
     <script src="source/dist/js/dashboard1.js"></script>
     <!-- This is data table -->
